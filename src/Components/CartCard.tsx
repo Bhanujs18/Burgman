@@ -35,7 +35,7 @@ const Wrapper=styled.section`
 
 `
 
-const Card = ({product}:any) => {
+const Card = ({product , qty}:any) => {
 
   const dispatch = useDispatch();
 
@@ -58,6 +58,7 @@ const Card = ({product}:any) => {
               <div style={{display:'flex', alignItems:'center'}}>{name}</div>
              </div>
                <p>Price : Rs.{price}/-</p>
+               <p>{qty}</p>
                <p onClick={()=>remove(id)} style={{color: "white" , display: "flex" , gap:"0.4rem" , justifyContent:'center' , backgroundColor:'red' , cursor:'pointer' , padding:'1rem' , width: '6rem'}}>Remove</p>
            </div>
       

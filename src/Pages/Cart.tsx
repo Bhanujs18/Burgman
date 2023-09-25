@@ -4,13 +4,13 @@ import CartCard from "../Components/CartCard"
 
 const Cart = () => {
 
-  const products = useSelector((store:any) =>store.menu.cart) 
-  console.log(products)
+  const products = useSelector((store:any) =>store.menu) 
   return (
- 
+   
     <div className='card_div'> 
      Cart items
-     {products.map((cur:any , index:number)=><CartCard key={index} product={cur.product} />)}
+     {products.map((cur:any , index:number)=><CartCard key={index} product={cur.product} qty={cur.quantity}/>)}
+
     </div>
   )}
 
