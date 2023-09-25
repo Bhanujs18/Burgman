@@ -45,8 +45,8 @@ const NavBar = () => {
             <div className="navbarlinks">
         <NavLink className='navbar_link' to="/">Home</NavLink>
         <NavLink className='navbar_link' to="/menu">Menu</NavLink>
-        <NavLink className='navbar_link' to="/about">About Us</NavLink>
-        <NavLink className='navbar_link' to="/contact">Contact Us</NavLink>
+        <NavLink className='navbar_link' to="/about">About</NavLink>
+        <NavLink className='navbar_link' to="/contact">Contact</NavLink>
         <NavLink className='navbar_link' to="/cart"><AiOutlineShoppingCart /></NavLink>
             </div>
 

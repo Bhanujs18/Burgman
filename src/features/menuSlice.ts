@@ -19,6 +19,8 @@ const menuSlice = createSlice({
         const exist = state.cart.find((cur)=>cur.product.id == product.id)
         if(exist){
         console.log("exist")
+        // const newcart =   state.cart.map((curItem) => curItem.product.id !== action.payload);
+        // state.cart = newcart;
         }
         else{
             console.log("not exist")
