@@ -1,0 +1,14 @@
+.home{
+ display: flex;
+ padding: 2%;
+  background-color: rgb(255, 255, 255);
+}
+
+.card_div{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  background-color: rgb(255, 255, 255);
+  gap: 1rem;
+  padding: 1rem;
+}
+
