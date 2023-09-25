@@ -56,7 +56,7 @@ const [quantity, setQuantity] = useState(0);
    }
    const sub = () => {
     setQuantity(quantity-1);
-    data(product , quantity);
+     data(product , quantity);
    }
 
   return (

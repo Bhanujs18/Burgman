@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
+
 
 const menuSlice = createSlice({
      name: "menu",
@@ -19,13 +20,21 @@ const menuSlice = createSlice({
         const exist = state.cart.find((cur)=>cur.product.id == product.id)
         if(exist){
         console.log("exist")
-        // const newcart =   state.cart.map((curItem) => curItem.product.id !== action.payload);
-        // state.cart = newcart;
+        state.cart.map((curItem) => {
+            
+            if(curItem.product.id === product.id){
+               let newvalue = quantity;
+               curItem.quantity = newvalue;
+               return curItem;
+            }
+            return action.payload;
+        });
         }
         else{
             console.log("not exist")
-            state.cart.push(action.payload)
+            state.cart.push(action.payload);
         }
+        localStorage.setItem("cartStorage" , JSON.stringify(state.cart));
        },
        removeitem:(state , action) => {
         console.log(action.payload)
