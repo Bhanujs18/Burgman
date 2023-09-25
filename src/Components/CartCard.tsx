@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import {AiFillMinusSquare , AiFillPlusSquare} from 'react-icons/ai';
 import { useDispatch } from "react-redux";
-import { addtocart } from "../features/menuSlice";
+import { addtocart, removeitem } from "../features/menuSlice";
 
 const Wrapper=styled.section`
 
@@ -39,24 +39,10 @@ const Card = ({product}:any) => {
 
   const dispatch = useDispatch();
 
-const [display , setDisplay] = useState(false); 
-const [quantity, setQuantity] = useState(0);
-
    const {name , img , price, category , id} = product;
 
-   const data = (product:any , quantity:number) => {
-     setDisplay(true);
-     const arr = { product , quantity};
-     dispatch(addtocart(arr))
-   }
-
-   const add = () => {
-    setQuantity(quantity+1);
-    data(product , quantity);
-   }
-   const sub = () => {
-    setQuantity(quantity-1);
-    data(product , quantity);
+   const remove = (id:number) => {
+    dispatch(removeitem(id));
    }
 
   return (
@@ -70,22 +56,13 @@ const [quantity, setQuantity] = useState(0);
            <div className="nameandicon">
               <img src={category} style={{height: "1rem" , width: "1rem"}}/>
               <div style={{display:'flex', alignItems:'center'}}>{name}</div>
-         </div>
-           <p>Price : Rs.{price}/-</p>
-             <div style={{color: "green" , display: "flex" , gap:"0.4rem" , alignItems:'center'}}>
-             <div>
-            {(display!=true) ? 
-            <div className="addtocart" onClick={()=>data(product , quantity)} style={{cursor:'pointer'}}> Add to cart </div> : 
-            <div className="addtocart">
-            <AiFillMinusSquare onClick={sub}/>
-            {quantity}
-            <AiFillPlusSquare onClick={add} /> 
-            </div> }
+             </div>
+               <p>Price : Rs.{price}/-</p>
+               <p onClick={()=>remove(id)} style={{color: "white" , display: "flex" , gap:"0.4rem" , justifyContent:'center' , backgroundColor:'red' , cursor:'pointer' , padding:'1rem' , width: '6rem'}}>Remove</p>
+           </div>
+      
         </div>
-       </div>
-       </div>
-        </div>
-   </div>
+   </div >
    </Wrapper>
   )
 }
