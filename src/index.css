@@ -6,6 +6,13 @@
 
 .card_div{
   display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: rgb(255, 255, 255);
+  gap: 1rem;
+  padding: 1rem;
+}
+.cart_card_div{
+  display: grid;
   grid-template-columns: repeat(1, 1fr);
   background-color: rgb(255, 255, 255);
   gap: 1rem;
@@ -38,3 +45,8 @@
   color:green;
 }
 
+.menu_banner{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

@@ -9,7 +9,7 @@ const Cart = () => {
   console.log(products)
   return (
    
-    <div className='card_div'> 
+    <div className='cart_card_div'> 
      Cart items
      {products.map((cur:any , index:number)=><CartCard key={index} product={cur.product} qty={cur.quantity}/>)}
 

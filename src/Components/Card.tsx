@@ -7,19 +7,21 @@ import { addtocart } from "../features/menuSlice";
 const Wrapper=styled.section`
 
   .card{
+
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     display: flex;
+    height: 10rem;
 
     .img_and_price{
     display: flex;
     gap: 0.2rem;
-  
-    
+     
     .nameandicon{
         display: flex;
         align-items: center;
         gap: 1rem;
-        padding: 1rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
         justify-content: left;
      }
 
@@ -27,7 +29,7 @@ const Wrapper=styled.section`
         display:flex;
         gap: 0.4rem;
         align-items: center;
-        padding: 0.4rem;
+        padding: 0.1rem;
     }
     }
     
@@ -42,7 +44,7 @@ const Card = ({product}:any) => {
 const [display , setDisplay] = useState(false); 
 const [quantity, setQuantity] = useState(0);
 
-   const {name , img , price, category , id} = product;
+   const {name , img , price, category , rating} = product;
 
    const data = (product:any , quantity:number) => {
      setDisplay(true);
@@ -65,15 +67,21 @@ const [quantity, setQuantity] = useState(0);
          
 
         <div className="img_and_price">
-           <img src={img} alt={name}  style={{height: '10rem' , width:'9rem'}}/>
-           <div>
-           <div className="nameandicon">
-              <img src={category} style={{height: "1rem" , width: "1rem"}}/>
-              <div style={{display:'flex', alignItems:'center'}}>{name}</div>
-         </div>
-           <p>Price : Rs.{price}/-</p>
-             <div style={{color: "green" , display: "flex" , gap:"0.4rem" , alignItems:'center'}}>
-             <div>
+                <img src={img} alt={name}  style={{height: '10rem' , width:'9rem'}}/>
+                          <div>
+                                 <div className="nameandicon">
+                                    <img src={category} style={{height: "1rem" , width: "1rem"}}/>
+                                    <div style={{display:'flex', alignItems:'center'}}>{name}</div>
+                                 </div>
+                          <div className="nameandicon">
+                           <p>Price : Rs.{price}/-</p>
+                           <p> {rating}⭐</p>
+                           </div>
+
+
+             <div style={{color: "green" , alignItems:'center', paddingLeft:'1rem'}}>
+            
+
             {(display!=true) ? 
             <div className="addtocart" onClick={()=>data(product , quantity)} style={{cursor:'pointer'}}> Add to cart </div> : 
             <div className="addtocart">
@@ -81,11 +89,12 @@ const [quantity, setQuantity] = useState(0);
             {quantity}
             <AiFillPlusSquare onClick={add} /> 
             </div> }
-        </div>
-       </div>
-       </div>
-        </div>
-   </div>
+
+            
+            </div>
+                                    </div>
+                            </div>
+            </div>
    </Wrapper>
   )
 }

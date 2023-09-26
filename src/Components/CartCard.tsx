@@ -1,34 +1,27 @@
-import { useState } from "react";
 import styled from "styled-components";
-import {AiFillMinusSquare , AiFillPlusSquare} from 'react-icons/ai';
 import { useDispatch } from "react-redux";
-import { addtocart, removeitem } from "../features/menuSlice";
+import { removeitem } from "../features/menuSlice";
+import {AiFillDelete} from 'react-icons/ai';
 
 const Wrapper=styled.section`
 
-  .card{
+  .Cartcard{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    display: flex;
+    display: block;
+    width: 100%;
+    height: 10rem;
 
     .img_and_price{
     display: flex;
     gap: 0.2rem;
-  
-    
-    .nameandicon{
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: 1rem;
-        justify-content: left;
-     }
+    justify-content: space-between;
 
-    .addtocart{
-        display:flex;
-        gap: 0.4rem;
-        align-items: center;
-        padding: 0.4rem;
+
+    .cartdetails{
+      displaY: block;
+      padding: 1rem;
     }
+  
     }
     
   }
@@ -47,21 +40,19 @@ const Card = ({product , qty}:any) => {
 
   return (
     <Wrapper>
-    <div className='card'>
-         
-
+    <div className='Cartcard'>
+        
         <div className="img_and_price">
+           <div style={{display:'flex'}}>
            <img src={img} alt={name}  style={{height: '10rem' , width:'9rem'}}/>
-           <div>
-           <div className="nameandicon">
-              <img src={category} style={{height: "1rem" , width: "1rem"}}/>
-              <div style={{display:'flex', alignItems:'center'}}>{name}</div>
-             </div>
-               <p>Price : Rs.{price}/-</p>
-               <p>{qty}</p>
-               <p onClick={()=>remove(id)} style={{color: "white" , display: "flex" , gap:"0.4rem" , justifyContent:'center' , backgroundColor:'red' , cursor:'pointer' , padding:'1rem' , width: '6rem'}}>Remove</p>
+              <div className="cartdetails">
+                 <p>Name: {name}</p>
+                 <p>Quantity: {qty}</p>
+                 <p>Total price: {qty*price}</p>
+              </div>
            </div>
       
+           <p onClick={()=>remove(id)} style={{color: "white" , display: "flex" ,alignItems:'center',  justifyContent:'center' , backgroundColor:'red' , cursor:'pointer' , width: '6rem' , height:'10rem'}}><AiFillDelete /></p>
         </div>
    </div >
    </Wrapper>
