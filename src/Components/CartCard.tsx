@@ -20,6 +20,7 @@ const Wrapper=styled.section`
     .cartdetails{
       displaY: block;
       padding: 1rem;
+      
     }
   
     }
