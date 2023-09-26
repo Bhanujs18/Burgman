@@ -5,6 +5,7 @@ import AboutUs from "./Pages/AboutUs"
 import ContactUs from "./Pages/ContactUs"
 import Menu from "./Pages/Menu"
 import NavBar from "./Components/NavBar"
+import Footer from "./Components/Footer"
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
       <Route path="/contact" element={<ContactUs />}/>
       <Route path="/menu" element={<Menu />}/>
       </Routes>
+      <Footer />
 
       </div>
      

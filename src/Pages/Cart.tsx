@@ -4,7 +4,9 @@ import CartCard from "../Components/CartCard"
 
 const Cart = () => {
 
-  const products = useSelector((store:any) =>store.menu) 
+
+  const products = useSelector((store:any) =>store.menu.cart) 
+  console.log(products)
   return (
    
     <div className='card_div'> 

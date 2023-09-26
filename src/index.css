@@ -1,6 +1,6 @@
 .home{
  display: flex;
- padding: 2%;
+ position: relative;
   background-color: rgb(255, 255, 255);
 }
 
@@ -10,5 +10,31 @@
   background-color: rgb(255, 255, 255);
   gap: 1rem;
   padding: 1rem;
+}
+.home_img{
+  width: 100%;
+}
+.explore{
+  position: absolute;
+  display: block;
+  align-items: center;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,50%);
+ 
+}
+.explore_button{
+  display: flex;
+  background-color: green;
+  color: white;
+  justify-content: center;
+  border: none;
+  padding: 0.3rem 3rem;
+  
+}
+.explore_button:hover{
+  border: none;
+  background-color: rgb(255, 255, 255);
+  color:green;
 }
 
