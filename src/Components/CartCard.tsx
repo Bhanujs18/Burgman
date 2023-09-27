@@ -47,9 +47,9 @@ const Card = ({product , qty}:any) => {
            <div style={{display:'flex'}}>
            <img src={img} alt={name}  style={{height: '10rem' , width:'9rem'}}/>
               <div className="cartdetails">
-                 <p>Name: {name}</p>
-                 <p>Quantity: {qty}</p>
-                 <p>Total price: {qty*price}</p>
+                 <p>Item: {name}</p>
+                 <p>Quantity: {qty} units</p>
+                 <p>Total price: Rs. {qty*price}/-</p>
               </div>
            </div>
       

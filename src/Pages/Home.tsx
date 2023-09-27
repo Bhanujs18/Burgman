@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom"
 import HomeSection1 from "../Components/HomeSection1"
 import HomeSection2 from "../Components/HomeSection2"
 
@@ -23,7 +24,7 @@ const Home = () => {
       <div className="explore">
         <h1 style={{color:'white'}}>Burgers, makes you Burgman</h1>
         <div style={{display:'flex' , justifyContent:'center' ,  width:'100%'}}>
-        <button className="explore_button">Visit Store</button>
+        <NavLink to='/menu'><button className="explore_button">Visit Store</button></NavLink> 
         </div>
       </div>
       </div>

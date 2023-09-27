@@ -22,7 +22,7 @@ background-color: green;
 
     .navbarlinks{
         display: flex;
-        gap: 1rem;
+        gap: 3rem;
         align-items: center;
         margin-right: 1.5rem;
    .navbar_link{

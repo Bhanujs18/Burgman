@@ -4,6 +4,7 @@ import {AiFillMinusSquare , AiFillPlusSquare} from 'react-icons/ai';
 import { useDispatch } from "react-redux";
 import { addtocart } from "../features/menuSlice";
 
+
 const Wrapper=styled.section`
 
   .card{
@@ -44,7 +45,17 @@ const Card = ({product}:any) => {
 const [display , setDisplay] = useState(false); 
 const [quantity, setQuantity] = useState(0);
 
-   const {name , img , price, category , rating} = product;
+//  interface Product {
+//     id: number,
+//     price: number,
+//     img: string,
+//     stock: number;
+//     name: string,
+//     category:string,
+//     rating:number,
+//  }  
+
+   const {name , img , price, category , rating}  = product;
 
    const data = (product:any , quantity:number) => {
      setDisplay(true);
@@ -60,6 +71,7 @@ const [quantity, setQuantity] = useState(0);
     setQuantity(quantity-1);
      data(product , quantity);
    }
+
 
   return (
     <Wrapper>

@@ -8,12 +8,14 @@ import { createSlice } from "@reduxjs/toolkit";
 //     };
 
 
+
 const menuSlice = createSlice({
      name: "menu",
      initialState : {
         products: [],
         quantity:0,
-        cart : JSON.parse(localStorage.getItem("cartStorage")) || [],  //localStorageCart()  alternative method
+        cart : JSON.parse(localStorage.getItem("cartStorage")) || [],  //localStorageCart()  alternative method,
+        totalquantity: 0,
      },
 
     // Reducers (Actions)
@@ -24,10 +26,10 @@ const menuSlice = createSlice({
 
          addtocart:(state , action) =>{
         let { product , quantity} = action.payload;
-        const exist = state.cart.find((cur)=>cur.product.id == product.id)
+        const exist = state.cart.find((cur:any)=>cur.product.id == product.id)
         if(exist){
         console.log("exist")
-        state.cart.map((curItem) => {
+        state.cart.map((curItem:any) => {
             
             if(curItem.product.id === product.id){
                let newvalue = quantity;
@@ -42,14 +44,24 @@ const menuSlice = createSlice({
             state.cart.push(action.payload);
         }
         localStorage.setItem("cartStorage" , JSON.stringify(state.cart));
+
        },
        removeitem:(state , action) => {
         console.log(action.payload)
-       const newcart = state.cart.filter((curItem) => curItem.product.id !== action.payload);
+       const newcart = state.cart.filter((curItem:any) => curItem.product.id !== action.payload);
        state.cart = newcart;
-       }
+       localStorage.setItem("cartStorage" , JSON.stringify(state.cart));
+      
+    //    totalItem:(state) => {
+        // const qty:number = state.cart.reduce((initial:number , curItem:any) => {
+        //     initial = initial + curItem.quantity;
+        //     return initial;   
+        //    },0)
+        //    state.cart.totalquantity = qty;
+        //    },
+         },
     },
 });
 
-export const { updatemenu , addtocart  , removeitem} = menuSlice.actions;
+export const { updatemenu , addtocart  , removeitem , totalItem} = menuSlice.actions;
 export default menuSlice.reducer;

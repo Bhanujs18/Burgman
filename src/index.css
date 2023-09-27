@@ -11,12 +11,25 @@
   gap: 1rem;
   padding: 1rem;
 }
+.cart_div{
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  padding: 1rem;
+  
+}
 .cart_card_div{
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   background-color: rgb(255, 255, 255);
   gap: 1rem;
   padding: 1rem;
+}
+.checkout_div{
+  display: block;
+  
+  height: 100%;
+  padding-top: 3rem;
 }
 .home_img{
   width: 100%;
@@ -37,7 +50,7 @@
   justify-content: center;
   border: none;
   padding: 0.3rem 3rem;
-  
+  text-decoration: none;
 }
 .explore_button:hover{
   border: none;
