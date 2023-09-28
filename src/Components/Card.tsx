@@ -82,6 +82,8 @@ const [quantity, setQuantity] = useState(0);
 //     rating:number,
 //  }  
 
+
+
    const {name , img , price, category , rating}  = product;
 
    const data = (product:any , quantity:number) => {

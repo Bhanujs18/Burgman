@@ -1,8 +1,5 @@
-import { useDispatch , useSelector} from 'react-redux';
-import API from '../Links/link';
-import axios from 'axios';
-import {useEffect} from 'react';
-import { updatemenu } from '../features/menuSlice';
+
+import { useSelector } from 'react-redux';
 import Card from '../Components/Card';
 
 
@@ -10,16 +7,7 @@ import Card from '../Components/Card';
 
 const Menu =  () => {
 
-  const dispatch = useDispatch();
-  const menu = async (API:any) => {
-  const res = axios.get(API);
-  const pro = (await res).data;
-  dispatch(updatemenu(pro));
-  }
-
-  useEffect(() => {
-  menu(API);
-  }, [])
+ 
   
   const products = useSelector((store:any) =>store.menu.products) 
   return (

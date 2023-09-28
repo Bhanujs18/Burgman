@@ -7,12 +7,20 @@ const localStorageCart=()=>{
     return parsedata;
     };
 
+    const menuStorageCart=()=>{
+        let newcart:any = localStorage.getItem("menu");
+        const parsedata = JSON.parse(newcart);
+        if(!Array.isArray(parsedata)) return [];
+        return parsedata;
+        };
+    
+
 
 
 const menuSlice = createSlice({
      name: "menu",
      initialState : {
-        products: [],
+        products: menuStorageCart(),
         quantity:0,
         cart : localStorageCart(),
         totalquantity: 0,
@@ -22,6 +30,8 @@ const menuSlice = createSlice({
     reducers: {
         updatemenu:(state , action) => {
          state.products = action.payload;
+         localStorage.setItem("menu" , JSON.stringify(state.products));
+
          },
 
          addtocart:(state , action) =>{
