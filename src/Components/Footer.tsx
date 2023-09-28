@@ -10,13 +10,15 @@ color: white;
 
 .footerDiv{
     display:flex;
-    padding: 1rem 3rem;
+    padding: 0.3rem 3rem;
     align-items: center;
     justify-content: space-between;
     gap: 8rem;
 
     .footerlogo{
-        height: 15rem;
+        padding-top: 0.4rem;
+        height: 10rem;
+        filter: drop-shadow(0 0 0.75rem black);
     }
 
     .footer-div-sections{
@@ -98,12 +100,11 @@ const Footer = () => {
                     <p> +11 2143 23423,</p>
                     <p> +11 2143 23423,</p>
                     <p> +11 2143 23423,</p>
-                    <p> +11 2143 23423</p>
         </div>
         </div>
         </div>
      </div>
-     <p>© 2023 Tik Tik. All rights reserved</p>
+     <p style={{textAlign:'center'}}>© 2023 Tik Tik. All rights reserved</p>
     </Wrapper>
   )
 }

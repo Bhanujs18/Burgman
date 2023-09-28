@@ -18,6 +18,7 @@ background-color: green;
     .navlogo{
         height: 5rem;
         padding: 0.4rem;
+        filter: drop-shadow(0 0 0.75rem black);
        }
 
     .navbarlinks{

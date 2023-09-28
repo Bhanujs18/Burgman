@@ -16,6 +16,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: column ;
   align-items: center;
+  background-image:url("./logo/4.jpg");
 
   .submitform{
     padding: 0.4rem 2rem;

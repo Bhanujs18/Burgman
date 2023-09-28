@@ -6,6 +6,8 @@ import ContactUs from "./Pages/ContactUs"
 import Menu from "./Pages/Menu"
 import NavBar from "./Components/NavBar"
 import Footer from "./Components/Footer"
+import OrderPlaced from "./Pages/OrderPlaced"
+import OrderNotPlaced from "./Pages/OrderNotPlaced"
 
 
 
@@ -22,6 +24,9 @@ const App = () => {
       <Route path="/about" element={<AboutUs />}/>
       <Route path="/contact" element={<ContactUs />}/>
       <Route path="/menu" element={<Menu />}/>
+      <Route path="/orderPlaced" element={<OrderPlaced />}/>
+      <Route path="/orderNotPlaced" element={<OrderNotPlaced />}/>
+
       </Routes>
       <Footer />
 

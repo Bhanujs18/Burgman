@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// const localStorageCart=()=>{
-//     let newcart = localStorage.getItem("cartStorage");
-//     const parsedata = JSON.parse(newcart);
-//     if(!Array.isArray(parsedata)) return [];
-//     return parsedata;
-//     };
+const localStorageCart=()=>{
+    let newcart:any = localStorage.getItem("cartStorage");
+    const parsedata = JSON.parse(newcart);
+    if(!Array.isArray(parsedata)) return [];
+    return parsedata;
+    };
 
 
 
@@ -14,9 +14,9 @@ const menuSlice = createSlice({
      initialState : {
         products: [],
         quantity:0,
-        cart : JSON.parse(localStorage.getItem("cartStorage")) || [],  //localStorageCart()  alternative method,
+        cart : localStorageCart(),
         totalquantity: 0,
-     },
+     }, 
 
     // Reducers (Actions)
     reducers: {
@@ -63,5 +63,5 @@ const menuSlice = createSlice({
     },
 });
 
-export const { updatemenu , addtocart  , removeitem , totalItem} = menuSlice.actions;
+export const { updatemenu , addtocart  , removeitem} = menuSlice.actions;
 export default menuSlice.reducer;

@@ -33,11 +33,13 @@ const Card = ({product , qty}:any) => {
 
   const dispatch = useDispatch();
 
-   const {name , img , price, category , id} = product;
+   const {name , img , price , id} = product;
 
    const remove = (id:number) => {
     dispatch(removeitem(id));
    }
+
+ 
 
   return (
     <Wrapper>
