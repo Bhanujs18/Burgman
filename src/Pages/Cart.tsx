@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux/es/hooks/useSelector"
 import CartCard from "../Components/CartCard";
-import CheckOut from '../Components/CheckOut.js';
+
 
 const Cart = () => {
  
