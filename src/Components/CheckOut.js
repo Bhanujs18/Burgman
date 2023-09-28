@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-export const CheckOut = ({pay}:any) => {
+export const CheckOut = ({pay}) => {
   console.log("total amt " + pay);
    const navigate = useNavigate();
-  const loadScript = (src:any) => {
+  const loadScript = (src) => {
     return new Promise((resovle) => {
       const script = document.createElement("script");
       script.src = src;
@@ -22,7 +22,7 @@ export const CheckOut = ({pay}:any) => {
   };
   
 
-  const displayRazorpay = async (pay:number) => {
+  const displayRazorpay = async (pay) => {
     const res = await loadScript(
       "https://checkout.razorpay.com/v1/checkout.js"
     );
@@ -40,7 +40,7 @@ export const CheckOut = ({pay}:any) => {
       description: "Thanks for purchasing",
       image:"./logo/1.png",
 
-      handler: function (response:any) {
+      handler: function (response) {
         alert(response.razorpay_payment_id+" Payment Successfully");
         navigate('/orderPlaced');
       },
@@ -54,8 +54,8 @@ export const CheckOut = ({pay}:any) => {
 
  
 
-  const products = useSelector((store:any) =>store.menu.cart) 
-     const submit = async (e:any) => {
+  const products = useSelector((store) =>store.menu.cart) 
+     const submit = async (e) => {
         e.preventDefault();
         displayRazorpay(pay);
         console.log("i m submit");

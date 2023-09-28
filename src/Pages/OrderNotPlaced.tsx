@@ -76,8 +76,6 @@ const OrderNotPlaced = () => {
     const totalqty:number =  qty.reduce((accumulator:number , cur:any)=> accumulator+=cur.quantity,0);
     const totalamt:number =  qty.reduce((accumulator:number , cur:any)=> accumulator+=((cur.product.price)*cur.quantity),0);
     console.log(totalamt);
-    const pay:number = totalamt+(Math.round(0.05*totalamt));
-
   return (
     <Wrapper>
           <div className="order_heading">
