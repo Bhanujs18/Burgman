@@ -5,6 +5,7 @@ import {AiOutlineShoppingCart} from 'react-icons/ai';
 import {BsList} from 'react-icons/bs';
 import { useState } from "react";
 import { CgClose } from 'react-icons/cg';
+import { useSelector } from "react-redux";
 
 
 const Wrapper = styled.section`
@@ -92,6 +93,10 @@ const NavBar = () => {
 
  const [icon, setIcon] = useState(true);
 
+ const products = useSelector((store:any) =>store.menu.cart) 
+ const qty = products;
+ const totalqty:number =  qty.reduce((accumulator:number , cur:any)=> accumulator+=cur.quantity,0);
+
   return (
     <Wrapper>
         <div className="navbar">
@@ -109,7 +114,9 @@ const NavBar = () => {
         <NavLink className='navbar_link' to="/menu" onClick={()=>setIcon(true)}>Menu</NavLink>
         <NavLink className='navbar_link' to="/about" onClick={()=>setIcon(true)}>About</NavLink>
         <NavLink className='navbar_link' to="/contact" onClick={()=>setIcon(true)}>Contact</NavLink>
-        <NavLink className='navbar_link' to="/cart" onClick={()=>setIcon(true)}><AiOutlineShoppingCart /></NavLink>
+        <NavLink className='navbar_link' to="/login" onClick={()=>setIcon(true)}>Login</NavLink>
+        <NavLink className='navbar_link' to="/signup" onClick={()=>setIcon(true)}>SignUp</NavLink>
+        <NavLink className='navbar_link' to="/cart" onClick={()=>setIcon(true)} ><AiOutlineShoppingCart /><p>{totalqty}</p></NavLink>
             </div>
 
 

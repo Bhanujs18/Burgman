@@ -35,7 +35,7 @@ justify-content: center;
    
     color: black;
     width:60%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    
 .order_placed_details{
     display: block;
     align-items: center;

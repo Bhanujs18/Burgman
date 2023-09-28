@@ -8,6 +8,9 @@ import NavBar from "./Components/NavBar"
 import Footer from "./Components/Footer"
 import OrderPlaced from "./Pages/OrderPlaced"
 import OrderNotPlaced from "./Pages/OrderNotPlaced"
+import Error from "./Components/Error"
+import Login from "./Components/Login"
+import SignUp from "./Components/SignUp"
 
 
 
@@ -26,6 +29,9 @@ const App = () => {
       <Route path="/menu" element={<Menu />}/>
       <Route path="/orderPlaced" element={<OrderPlaced />}/>
       <Route path="/orderNotPlaced" element={<OrderNotPlaced />}/>
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
+      <Route path="/*" element={<Error />} />
 
       </Routes>
       <Footer />
