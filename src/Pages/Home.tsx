@@ -21,8 +21,9 @@ const Home = () => {
     <div >
       <div className="home">
       <img className="home_img" src="./logo/3.jpg" />
+      <img className="home_img2" src="./logo/7.jpg" />
       <div className="explore">
-        <h1 style={{color:'white'}}>Burgers, makes you Burgman</h1>
+        <h1 className="tagline">Burgers, makes you Burgman</h1>
         <div style={{display:'flex' , justifyContent:'center' ,  width:'100%'}}>
         <NavLink to='/menu'><button className="explore_button">Visit Store</button></NavLink> 
         </div>

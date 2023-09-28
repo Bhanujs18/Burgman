@@ -33,6 +33,14 @@ const Wrapper = styled.section`
   }
   
 }
+
+@media(max-width: 700px){
+  .contactForm{
+    .inputForm{
+      width: 90%;
+    }
+  }
+}
 `
 
 const ContactUs = () => {
@@ -46,7 +54,7 @@ const ContactUs = () => {
     style= {{border : "0"}} 
     loading="lazy"/>
     <form className='contactForm' action='https://formspree.io/f/mleyjnjr' method='post'>
-      <h1 style={{color:"white"}}>Need Help? Drop Your Message..</h1>
+      <h1 style={{color:"white" , margin:'2rem'}}>Need Help? Drop Your Message..</h1>
       <input className='inputForm'  name='name' type='text' placeholder='Name....'/>
       <input className='inputForm'  name='email' type='email' placeholder='Email....'/>
       <input className='inputForm' style={{height:"5rem"}}  name='message' placeholder='Message....' />

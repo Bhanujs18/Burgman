@@ -37,13 +37,40 @@ justify-content: center;
     width:60%;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 .order_placed_details{
+    display: block;
     align-items: center;
     gap: 1rem;
      .order_placed_img{
+       
             height: 17rem;
             width: 30rem;
                       }
                      }
+                    }
+                }
+
+                @media(max-width:1256px){
+                    font-size: 0.9rem;
+                    .order_placed_div{
+                        .order_div{
+                            display: block;
+                            align-items: center;
+                            background-color: white;
+                            box-shadow: none;
+                            color: black;
+                            .order_placed_details{
+                                
+                                display: flex;
+                                justify-content: center;
+                            }
+                            .details{
+                                padding-top: 1rem;
+                                text-align: center;
+                                .paid{
+                                    color: green;
+                                }
+                            }
+                        }
                     }
                 }
 
@@ -69,12 +96,12 @@ const OrderPlaced = () => {
                 <div className="order_placed_details">
                   <img className="order_placed_img" src="https://www.icegif.com/wp-content/uploads/spongebob-squarepants-krabby-patty.gif" />
                 </div>
-               <div>
+         <div className="details">
          <p>Total qty = {totalqty} units</p>
          <p>Total Amount = Rs {totalamt}/-</p>
          <p>Tax 5% = Rs {Math.round(0.05*totalamt)}/-</p>
          <hr />
-         <p>Paid = Rs {totalamt+(Math.round(0.05*totalamt))}/-</p>
+         <p className="paid">Paid = Rs {totalamt+(Math.round(0.05*totalamt))}/-</p>
          <hr />
       
         </div>
@@ -85,3 +112,5 @@ const OrderPlaced = () => {
 }
 
 export default OrderPlaced
+
+

@@ -10,6 +10,7 @@ color: white;
 
 .footerDiv{
     display:flex;
+    width: 100%;
     padding: 0.3rem 3rem;
     align-items: center;
     justify-content: space-between;
@@ -22,16 +23,19 @@ color: white;
     }
 
     .footer-div-sections{
-        display: inline-block;
-      
-       
+        display: flex;
+         width: 100%;
+         justify-content: center;
+         .links{
+          display: flex;
       .footer-links{
           display: flex;
           flex-direction: row;
           text-decoration: none;
           color: white;
+          justify-content: center;
           font-size: 1rem;
-                }
+                }}
 
         .footer-icons{
             display: flex;;
@@ -59,6 +63,12 @@ color: white;
   }
 }
 }
+
+@media(max-width: 644px){
+.copyright{
+  font-size: 0.6rem;
+  text-align: center;
+}
 `
 
 const Footer = () => {
@@ -66,7 +76,7 @@ const Footer = () => {
   return (
     <Wrapper>
      <div className='footerDiv'>
-        <div className='footer-div-sections'  style={{display:"flex" , justifyContent:"center"}}>
+        <div className='footer-div-sections'  style={{display:"flex" , justifyContent:"center" , width:'100%'}}>
         <img alt="main-logo" src="./logo/1.png" className='footerlogo' />
         </div>
         <div className='footerDiv'>
@@ -88,10 +98,12 @@ const Footer = () => {
             </ul>
         </div>
         <div className="footer-div-sections">
+          <div className='links'>
         <a href='https://www.instagram.com/' style={{color: "white"}}><BsInstagram className='footer-icons' /></a>
         <a href='https://www.facebook.com/' style={{color: "white"}}>    <BsFacebook className='footer-icons'/> </a>
         <a href='https://www.twitter.com/' style={{color: "white"}}>    <BsTwitter className='footer-icons'/> </a>
         <a href='https://www.gmail.com/' style={{color: "white"}}>     <AiFillMessage className='footer-icons'/></a>
+         </div>
         </div>
        
         <div className="footer-div-sections">
@@ -104,7 +116,7 @@ const Footer = () => {
         </div>
         </div>
      </div>
-     <p style={{textAlign:'center'}}>© 2023 Tik Tik. All rights reserved</p>
+     <p className='copyright'>© 2023 Tik Tik. All rights reserved</p>
     </Wrapper>
   )
 }

@@ -21,7 +21,7 @@ align-items: center;
 .heroSection-1-grids{
 padding: 1rem;
 width:15rem;
-margin: 8px;   
+  
 border-radius: 4%;
 align-items: center;
 color: white;
@@ -36,11 +36,22 @@ color: white;
 
 @media (max-width : 960px){
 display: block;
+align-items: center;
+background-image: none;
+color: green;
 .hero2div{
   display: block;
   justify-content: center;
   font-size: 1rem;
-
+  color: green;
+  .heroSection-1-grids{
+    width: 100%;
+    
+    .icons{
+      width: 100%;
+      text-align: center;
+       color: green;
+    }
 }
 }
 `

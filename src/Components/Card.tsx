@@ -36,6 +36,33 @@ const Wrapper=styled.section`
     
   }
 
+  @media(max-width: 1126px){
+    .card{
+      .img_and_price{
+      .nameandicon{
+        font-size: 0.7rem;
+      }
+      .addtocart{
+        font-size: 0.7rem;
+      }
+    }
+  }
+  }
+
+  @media(max-width:644px){
+    .card{
+      .img_and_price{
+      .nameandicon{
+        font-size: 0.8rem;
+      }
+      .addtocart{
+        font-size: 0.8rem;
+      }
+    }
+  }
+  }
+  }
+
 `
 
 const Card = ({product}:any) => {

@@ -12,19 +12,65 @@ const Wrapper=styled.section`
     height: 10rem;
 
     .img_and_price{
+     
     display: flex;
     gap: 0.2rem;
     justify-content: space-between;
-
+    
+    .remove{
+      color: white;
+      display: flex;
+      align-items:center;
+      justify-content:center;
+      background-color:red;
+      cursor:pointer;
+      width: 6rem;
+      height:10rem;
+    }
+    .img{
+      height: 10rem;
+      width: 9rem;
+    }
 
     .cartdetails{
       displaY: block;
       padding: 1rem;
-      
+
+     
     }
   
     }
     
+  }
+
+
+  @media(max-width:600px){
+    
+    .Cartcard{
+      height: 5rem;
+  
+      .img_and_price{
+        .remove{
+          height: 5rem;
+        }
+       
+        .img{
+          height: 5rem;
+          width: 5rem;
+        
+        }
+  
+  
+      .cartdetails{
+        font-size: 0.8rem;
+      .totalprice{
+        display: none;
+      }
+       
+      }
+      }
+    }
+
   }
 
 `
@@ -46,16 +92,16 @@ const Card = ({product , qty}:any) => {
     <div className='Cartcard'>
         
         <div className="img_and_price">
-           <div style={{display:'flex'}}>
-           <img src={img} alt={name}  style={{height: '10rem' , width:'9rem'}}/>
-              <div className="cartdetails">
-                 <p>Item: {name}</p>
-                 <p>Quantity: {qty} units</p>
-                 <p>Total price: Rs. {qty*price}/-</p>
+              <div style={{display:'flex'}}>
+                     <img src={img} alt={name}  className="img"/>
+                          <div className="cartdetails">
+                             <p>{name}</p>
+                             <p>{qty} units</p>
+                             <p className="totalprice">Total price: Rs. {qty*price}/-</p>
+                          </div>
               </div>
-           </div>
       
-           <p onClick={()=>remove(id)} style={{color: "white" , display: "flex" ,alignItems:'center',  justifyContent:'center' , backgroundColor:'red' , cursor:'pointer' , width: '6rem' , height:'10rem'}}><AiFillDelete /></p>
+           <div onClick={()=>remove(id)}  className="remove"><AiFillDelete /></div>
         </div>
    </div >
    </Wrapper>
