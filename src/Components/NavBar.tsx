@@ -36,6 +36,21 @@ background-color: green;
    .navbar_link{
       color: white;
       text-decoration: none;
+      .cartdiv{
+        display: flex;
+        align-items: center;
+        fonr-size: 1.4rem;
+        .cartnumber{
+          background-color: white;
+          color: green;
+          font-size: 0.8rem;
+          display: flex;
+          justify-content: center;
+          height: 1.1rem;
+          width: 1.1rem;
+          border-radius: 50%;
+        }
+      }
     }
       }
       .icons{
@@ -116,7 +131,7 @@ const NavBar = () => {
         <NavLink className='navbar_link' to="/contact" onClick={()=>setIcon(true)}>Contact</NavLink>
         <NavLink className='navbar_link' to="/login" onClick={()=>setIcon(true)}>Login</NavLink>
         <NavLink className='navbar_link' to="/signup" onClick={()=>setIcon(true)}>SignUp</NavLink>
-        <NavLink className='navbar_link' to="/cart" onClick={()=>setIcon(true)} ><AiOutlineShoppingCart /><p>{totalqty}</p></NavLink>
+        <NavLink className='navbar_link' to="/cart" onClick={()=>setIcon(true)} ><div className="cartdiv"><AiOutlineShoppingCart /><p className="cartnumber">{totalqty}</p></div></NavLink>
             </div>
 
 

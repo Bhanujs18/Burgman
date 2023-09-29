@@ -20,6 +20,20 @@ text-align: center;
     width: 26rem;
 }
 
+@media(max-width:600px){
+    font-size: 1.3rem;
+    .img{
+        height: 13rem;
+        width: 15rem;
+    }
+    .error-btn{
+        margin-top: 1rem;
+        padding: 0.4rem 3rem;
+        font-size: 1rem;
+        
+    }
+}
+
 `
 
 export const Error = () => {

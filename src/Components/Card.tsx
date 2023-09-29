@@ -17,14 +17,14 @@ const Wrapper=styled.section`
     gap: 0.2rem;
      
     .nameandicon{
-        display: flex;
+       display: flex;
         align-items: center;
         gap: 1rem;
         font-size: 0.8rem;
         padding-top: 1rem;
         padding-left: 1rem;
         justify-content: left;
-     }
+     } 
 
     .addtocart{
         display:flex;
@@ -70,7 +70,7 @@ const Card = ({product}:any) => {
   const dispatch = useDispatch();
 
 const [display , setDisplay] = useState(false); 
-const [quantity, setQuantity] = useState(0);
+const [quantity, setQuantity] = useState(1);
 
 //  interface Product {
 //     id: number,
@@ -87,18 +87,10 @@ const [quantity, setQuantity] = useState(0);
    const {name , img , price, category , rating}  = product;
 
    const data = (product:any , quantity:number) => {
+    setQuantity(quantity);
      setDisplay(true);
      const arr = { product , quantity};
      dispatch(addtocart(arr))
-   }
-
-   const add = () => {
-    setQuantity(quantity+1);
-    data(product , quantity);
-   }
-   const sub = () => {
-    setQuantity(quantity-1);
-     data(product , quantity);
    }
 
 
@@ -126,9 +118,9 @@ const [quantity, setQuantity] = useState(0);
             {(display!=true) ? 
             <div className="addtocart" onClick={()=>data(product , quantity)} style={{cursor:'pointer'}}> Add to cart </div> : 
             <div className="addtocart">
-            <AiFillMinusSquare onClick={sub}/>
+            <AiFillMinusSquare onClick={()=>data(product , quantity-1)}/>
             {quantity}
-            <AiFillPlusSquare onClick={add} /> 
+            <AiFillPlusSquare onClick={()=>data(product , quantity+1)} /> 
             </div> }
 
             
