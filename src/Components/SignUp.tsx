@@ -5,6 +5,9 @@ const Wrapper = styled.section`
 display: flex;
 background-image: url('https://i.pinimg.com/736x/86/66/1c/86661cf49e8be271efb9cf939d9e932e.jpg');
 justify-content: center;
+background-position: inherit;
+background-repeat: no-repeat;
+background-size: cover;
   width: 100%;
 //   background-color: grey;
 background-position: top;
@@ -37,6 +40,7 @@ align-items: center;
 }
 
 @media(max-width: 600px){
+    background-position: center;
     .div{
         padding: 2rem 0rem;
         margin: 1rem 0rem;
