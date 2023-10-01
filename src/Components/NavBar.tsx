@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 import {BsList} from 'react-icons/bs';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CgClose } from 'react-icons/cg';
 import { useSelector } from "react-redux";
 import {  signOut } from "firebase/auth";
@@ -132,9 +132,13 @@ background-color: green;
 
 const NavBar = (val:any) => {
 
-  const [islog , setislog] = useState(val.islog)
+  const [islog , setislog] = useState(val.islog || false)
   const [icon, setIcon] = useState(true);
+
+
+  
   const logout = () =>{
+    setIcon(true);
     signOut(auth);
      setislog(null);
   }
@@ -155,12 +159,11 @@ const NavBar = (val:any) => {
             </div>
            
         <div  className= {icon ? "navbarlinks" : "mobmenu"}>
-        {(islog !==null )? <NavLink to='' className='navbar_link'>{}</NavLink> : null }
         <NavLink className='navbar_link' to="/" onClick={()=>setIcon(true)}>Home</NavLink>
         <NavLink className='navbar_link' to="/menu" onClick={()=>setIcon(true)}>Menu</NavLink>
         <NavLink className='navbar_link' to="/about" onClick={()=>setIcon(true)}>About</NavLink>
         <NavLink className='navbar_link' to="/contact" onClick={()=>setIcon(true)}>Contact</NavLink>
-        {(islog !==null )? <NavLink to='' className='navbar_link' onClick={logout}>logout</NavLink> : <NavLink className='navbar_link' to="/login" >Login</NavLink>}
+        {(islog)? <NavLink to='' className='navbar_link' onClick={logout}>logout</NavLink> : <NavLink className='navbar_link' to="/login"  onClick={()=>setIcon(true)} >Login</NavLink>}
         <NavLink className='navbar_link' to="/cart" onClick={()=>setIcon(true)} ><div className="cartdiv"><AiOutlineShoppingCart /><p className="cartnumber">{totalqty}</p></div></NavLink>
        
             </div>

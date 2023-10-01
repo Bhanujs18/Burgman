@@ -2,11 +2,6 @@ import { NavLink } from "react-router-dom"
 import HomeSection1 from "../Components/HomeSection1"
 import HomeSection2 from "../Components/HomeSection2"
 import Featured from "../Components/Featured"
-import { useDispatch } from "react-redux"
-import { updatemenu } from "../features/menuSlice"
-import API from "../Links/link"
-import { useEffect } from "react"
-import axios from "axios"
 
 
 
@@ -20,17 +15,7 @@ const Home = () => {
 //     stock: number;
 //     name: string,
 //  }  
-  
-const dispatch = useDispatch();
-const menu = async (API:any) => {
-const res = axios.get(API);
-const pro = (await res).data;
-dispatch(updatemenu(pro));
-}
 
-useEffect(() => {
-menu(API);
-}, [])
   
   return (
     <div >

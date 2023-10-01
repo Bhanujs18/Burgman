@@ -19,26 +19,24 @@ import { auth } from "./firebaseAuth/firebase"
 const App = () => {
 
   const [islog, setIslogin] = useState(false);
- const[useDEtails , setUserDEtails] = useState(null);
+ 
 useEffect(()=>{
     auth.onAuthStateChanged((user)=>{
     console.log(user)
     if(user){
-      setUserDEtails(user as any);
       setIslogin(true);
       console.log("login")
     }else{
-      setUserDEtails(null as any);
       setIslogin(false);
       console.log("notloglin")
     }
   })
- },[])
+ },)
 
   return (
     
      <div>
-      <NavBar val={islog} user={useDEtails}/>
+      <NavBar val={islog}/>
       <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/" element={<Home />}/>

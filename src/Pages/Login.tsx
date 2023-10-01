@@ -49,7 +49,7 @@ align-items: center;
 `
 
 const Login = () => {
-    JSON.parse(localStorage.getItem("isLogin?")as any);
+    
     const navigate = useNavigate();
     const [error , setError] = useState("");
     const [values , setValues] = useState({
@@ -77,14 +77,14 @@ const Login = () => {
              console.log(res);
            
             navigate('/');
-            localStorage.setItem("islogin?" , JSON.stringify(true));
+            // localStorage.setItem("islogin?" , JSON.stringify(true));
             setError("Logged In SucessFully");
             window. location. reload();
 
         }).catch((error)=>{
             setError(error.message);
             alert("SignUp First !!!");
-            localStorage.setItem("islogin?" , JSON.stringify(false));
+            // localStorage.setItem("islogin?" , JSON.stringify(false));
         })
 
         }

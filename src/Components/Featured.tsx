@@ -19,8 +19,8 @@ font-size: 1.3rem;
 
 const Featured =  () => {
 
-  const products = useSelector((store:any) =>store.menu.products)  
-
+  const products = useSelector((store:any) =>store.menu.products);  
+ if(products==null)
 
   return (
  <Wrapper>

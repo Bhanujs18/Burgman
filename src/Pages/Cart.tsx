@@ -16,14 +16,12 @@ const Cart = () => {
     const auth = getAuth();
     const user = auth.currentUser;
     if(user){
- 
-  localStorage.setItem("BurgmanLoggedin??" , JSON.stringify(true));
-  console.log("loggedin")
   const products = useSelector((store:any) =>store.menu.cart) 
   const qty = products;
   const totalqty:number =  qty.reduce((accumulator:number , cur:any)=> accumulator+=cur.quantity,0);
   const totalamt:number =  qty.reduce((accumulator:number , cur:any)=> accumulator+=((cur.product.price)*cur.quantity),0);
   const pay:number = totalamt+(Math.round(0.05*totalamt));
+
   return (
   <div>
     <UserDetails user={user} />
