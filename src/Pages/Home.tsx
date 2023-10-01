@@ -47,6 +47,7 @@ menu(API);
       <Featured />
       <HomeSection1 />
       <HomeSection2 />
+      <img style={{width:'100%'}} src="./logo/6.png" />
     </div>
   )
 }

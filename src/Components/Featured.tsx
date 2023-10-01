@@ -29,6 +29,9 @@ const Featured =  () => {
   <Card product={products[13]} />
   <Card product={products[9]} />
   <Card product={products[2]} />
+  <Card product={products[1]} />
+  <Card product={products[6]} />
+  <Card product={products[3]} />
  </div>
  </Wrapper>   
   )

@@ -137,6 +137,7 @@
     font-size: 1rem;
   }
   @media(max-width:700px){
+    background-color: green;
     font-size: 1.5rem;
     text-align: center;
   }
@@ -183,6 +184,8 @@
   text-decoration: none;
   @media(max-width:700px){
     padding: 0.3rem 2rem;
+    color: green;
+    background-color: white;;
   }
 }
 

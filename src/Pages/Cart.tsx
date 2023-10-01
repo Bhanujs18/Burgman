@@ -12,17 +12,11 @@ import UserDetails from "../Components/UserDetails";
 
 
 const Cart = () => {
-  const localStorageCart=()=>{
-    let user:any = localStorage.getItem("BurgmanLoggedin??");
-    const parsedata = JSON.parse(user);
-    if(parsedata) return true;
-    return false;
-    };
-   let isauth = localStorageCart();
+   
     const auth = getAuth();
     const user = auth.currentUser;
     if(user){
-  isauth = true;
+ 
   localStorage.setItem("BurgmanLoggedin??" , JSON.stringify(true));
   console.log("loggedin")
   const products = useSelector((store:any) =>store.menu.cart) 

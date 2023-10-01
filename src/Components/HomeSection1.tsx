@@ -20,7 +20,7 @@ align-items: center;
 
 .heroSection-1-grids{
 padding: 1rem;
-width:15rem;
+width:22rem;
   
 border-radius: 4%;
 align-items: center;
@@ -38,6 +38,7 @@ color: white;
 display: block;
 align-items: center;
 background-image: none;
+
 color: green;
 .hero2div{
   display: block;
