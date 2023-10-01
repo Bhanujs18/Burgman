@@ -54,13 +54,16 @@ background-color: green;
       }
     }
       }
+      .mobcart{
+      display: none;
+      }
       .icons{
        display: none;
       }
 
 }
 
-@media(max-width:644px){
+@media(max-width:770px){
   .navbar{
     display: flex;
     .navbarlinks{
@@ -82,10 +85,25 @@ background-color: green;
       }
        
     }
+    .mobcart{
+    display: flex;
+    color: white;
+    .cartdiv1{
+      font-size: 3rem;
+      display: flex;
+      offset: none;
+      align-items: center;
+      .cartnumber1{
+        font-size: 2rem;
+        text-decoration : none;
+      }
+    }
+    }
     .icons{
+      gap: 1rem;
       display: flex;
       color: white;
-      font-size: 2rem;
+      font-size: 4rem;
       cursor: pointer;
 
     .open{
@@ -107,16 +125,12 @@ background-color: green;
 
 const NavBar = (val:any) => {
 
- const [islog , setislog] = useState(val.islog)
-
+  const [islog , setislog] = useState(val.islog)
   const [icon, setIcon] = useState(true);
- 
   const logout = () =>{
     signOut(auth);
      setislog(null);
   }
-  
- 
  const products = useSelector((store:any) =>store.menu.cart) 
  const qty = products;
  const totalqty:number =  qty.reduce((accumulator:number , cur:any)=> accumulator+=cur.quantity,0);
@@ -127,13 +141,14 @@ const NavBar = (val:any) => {
             <div>
                 <NavLink to='/'><img className="navlogo" src='./logo/1.png' /></NavLink>
             </div>
-
+           
             <div className="icons">
+              <NavLink className='mobcart' to="/cart"><div className="cartdiv1"><AiOutlineShoppingCart /><p className="cartnumber1">{totalqty}</p></div></NavLink>
               {icon ? <BsList className="open" onClick={()=>setIcon(false)} />  :  <CgClose className="close" onClick={()=>setIcon(true)}/>}
             </div>
            
         <div  className= {icon ? "navbarlinks" : "mobmenu"}>
-        {(islog !==null )? <NavLink to='' className='navbar_link'></NavLink> :   <NavLink className='navbar_link' to="/login" >Login</NavLink>}
+        {(islog !==null )? <NavLink to='' className='navbar_link'>{}</NavLink> : null }
         <NavLink className='navbar_link' to="/" onClick={()=>setIcon(true)}>Home</NavLink>
         <NavLink className='navbar_link' to="/menu" onClick={()=>setIcon(true)}>Menu</NavLink>
         <NavLink className='navbar_link' to="/about" onClick={()=>setIcon(true)}>About</NavLink>

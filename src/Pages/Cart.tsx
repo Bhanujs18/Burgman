@@ -3,6 +3,7 @@ import CartCard from "../Components/CartCard";
 import { CheckOut } from "../Components/CheckOut";
 import { getAuth } from "firebase/auth";
 import Login from "./Login";
+import UserDetails from "../Components/UserDetails";
 // import { getAuth } from "firebase/auth";;
 // import Login from "../Components/Login";
 
@@ -31,6 +32,8 @@ const Cart = () => {
   const pay:number = totalamt+(Math.round(0.05*totalamt));
   return (
   <div>
+    <UserDetails user={user} />
+
     <div className="cart_div">
    
     <div className='cart_card_div'> 

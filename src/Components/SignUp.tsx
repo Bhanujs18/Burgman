@@ -85,6 +85,7 @@ const SignUp = () => {
             const user = res.user;
             updateProfile(user ,{
                 displayName:name,
+                photoURL:"https://cdn-icons-png.flaticon.com/512/149/149071.png",
             })
             console.log(res);
         }).catch((error)=>{

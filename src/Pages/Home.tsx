@@ -40,7 +40,7 @@ menu(API);
       <div className="explore">
         <h1 className="tagline">Burgers, makes you Burgman</h1>
         <div style={{display:'flex' , justifyContent:'center' ,  width:'100%'}}>
-        <NavLink to='/menu' style={{textDecoration:'none'}}><p className="explore_button">Visit Store</p></NavLink> 
+        <NavLink to='/menu' style={{textDecoration:'none'}}><p className="explore_button">Explore Menu</p></NavLink> 
         </div>
       </div>
       </div>
