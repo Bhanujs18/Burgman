@@ -32,6 +32,12 @@ const Wrapper=styled.section`
         align-items: center;
         padding: 0.1rem;
     }
+    .addtocarticon{
+      display: flex;
+     align-items: center;
+     gap: 0.5rem;
+    font-size: 1.1rem;
+    }
     }
     
   }
@@ -45,6 +51,12 @@ const Wrapper=styled.section`
       .addtocart{
         font-size: 0.7rem;
       }
+      .addtocarticon{
+        display: flex;
+       align-items: center;
+       gap: 0.4rem;
+      font-size: 0.9rem;
+      }
     }
   }
   }
@@ -57,6 +69,12 @@ const Wrapper=styled.section`
       }
       .addtocart{
         font-size: 0.8rem;
+      }
+      .addtocarticon{
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1rem;
       }
     }
   }
@@ -117,7 +135,7 @@ const [quantity, setQuantity] = useState(1);
 
             {(display!=true) ? 
             <div className="addtocart" onClick={()=>data(product , quantity)} style={{cursor:'pointer'}}> Add to cart </div> : 
-            <div className="addtocart">
+            <div className="addtocarticon">
             <AiFillMinusSquare onClick={()=>data(product , quantity-1)}/>
             {quantity}
             <AiFillPlusSquare onClick={()=>data(product , quantity+1)} /> 

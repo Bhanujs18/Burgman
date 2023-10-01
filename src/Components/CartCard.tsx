@@ -33,10 +33,9 @@ const Wrapper=styled.section`
     }
 
     .cartdetails{
-      displaY: block;
+      display: block;
       padding: 1rem;
-
-     
+      text-align: left;
     }
   
     }
@@ -52,6 +51,9 @@ const Wrapper=styled.section`
       .img_and_price{
         .remove{
           height: 5rem;
+          width: 3rem;
+          background: white;
+          color: red;
         }
        
         .img{
@@ -63,6 +65,8 @@ const Wrapper=styled.section`
   
       .cartdetails{
         font-size: 0.8rem;
+        padding: 0.2rem;
+        width: 100%;
       .totalprice{
         display: none;
       }

@@ -1,5 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import { auth } from "../firebaseAuth/firebase";
 
 const Wrapper = styled.section`
 display: flex;
@@ -46,6 +49,46 @@ align-items: center;
 `
 
 const Login = () => {
+    JSON.parse(localStorage.getItem("isLogin?")as any);
+    const navigate = useNavigate();
+    const [error , setError] = useState("");
+    const [values , setValues] = useState({
+        email:"",
+       password:""
+    });
+     
+    const dataset = (e:any) =>{
+        e.preventDefault();
+        const name = e.target.name;
+        const value = e.target.value;
+        setValues({...values ,[name]:value})
+    }
+
+        const handleSignUP = () =>{
+        const {email  , password} = values;
+        if(!email  || !password){
+            setError("Fill all the Fields!!!");
+            return;
+        }
+        else{
+        setError(" ");
+        signInWithEmailAndPassword(auth , email , password).then((res) =>
+        { 
+             console.log(res);
+           
+            navigate('/');
+            localStorage.setItem("islogin?" , JSON.stringify(true));
+            setError("Logged In SucessFully");
+            window. location. reload();
+
+        }).catch((error)=>{
+            setError(error.message);
+            alert("SignUp First !!!");
+            localStorage.setItem("islogin?" , JSON.stringify(false));
+        })
+
+        }
+    }
   return (
     <Wrapper>
         <div>
@@ -55,11 +98,12 @@ const Login = () => {
                 <p>Login</p>
             </div>
         <img  className='logImage credential'  src="https://i.pinimg.com/originals/ab/d7/a4/abd7a42750a2268fbd1088994e623ade.gif" />
-       <input className="credential" type="text" placeholder="Email"  />
-       <input className="credential" type="Password" placeholder="Password" />
+       <input className="credential" type="text" name="email" placeholder="Email" onChange={dataset} />
+       <input className="credential" type="Password" name="password" placeholder="Password" onChange={dataset} />
        <div className="credential">
-       <button className="button" style={{width:'100%'}}>Login</button>
+       <button className="button" style={{width:'100%'}} onClick={handleSignUP}>Login</button>
        </div>
+       <p style={{color:'white' , textAlign:'center'}}>{error}</p>
        <div className="credential">
        <NavLink to='/signup'><button className="button" style={{width:'100%' , backgroundColor:'grey'}}>Sign Up / New User</button></NavLink>
        </div>

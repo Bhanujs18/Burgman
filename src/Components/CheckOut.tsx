@@ -41,6 +41,7 @@ export const CheckOut = ({pay}:any) => {
       image:"./logo/1.png",
 
       handler: function (response:any) {
+        submit();
         alert(response.razorpay_payment_id+" Payment Successfully");
         navigate('/orderPlaced');
       },
@@ -55,9 +56,7 @@ export const CheckOut = ({pay}:any) => {
  
 
   const products = useSelector((store:any) =>store.menu.cart) 
-     const submit = async (e:any) => {
-        e.preventDefault();
-        displayRazorpay(pay);
+     const submit = async () => {
         console.log("i m submit");
         console.log("id" + products)
         const res = await fetch('https://burgman-burgers-default-rtdb.firebaseio.com/userData.json',{
@@ -79,7 +78,7 @@ export const CheckOut = ({pay}:any) => {
 
   return (
     <div style={{width:'100%' , display: "flex", justifyContent:'center'}}>
-          <button className="button" onClick={submit} >Place Order</button>
+          <button className="button" onClick={()=>displayRazorpay(pay)} >Place Order</button>
     </div>
   )
 }

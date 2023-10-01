@@ -9,19 +9,36 @@ import Footer from "./Components/Footer"
 import OrderPlaced from "./Pages/OrderPlaced"
 import OrderNotPlaced from "./Pages/OrderNotPlaced"
 import Error from "./Components/Error"
-import Login from "./Components/Login"
+import Login from "./Pages/Login"
 import SignUp from "./Components/SignUp"
-
+import { useEffect , useState} from "react"
+import { auth } from "./firebaseAuth/firebase"
 
 
 
 const App = () => {
+
+  const [islog, setIslogin] = useState(false);
+  const [userdetails , setUserdetails] = useState();
+useEffect(()=>{
+  auth.onAuthStateChanged((user)=>{
+    console.log(user)
+    if(user){
+      setIslogin(true);
+      console.log("login")
+    }else{
+      setIslogin(false);
+      console.log("notloglin")
+    }
+  })
+ },[])
+
   return (
     
      <div>
-      
-      <NavBar />
+      <NavBar val={islog} />
       <Routes>
+      <Route path="/login" element={<Login />} />
       <Route path="/" element={<Home />}/>
       <Route path="/cart" element={<Cart />}/>
       <Route path="/about" element={<AboutUs />}/>
@@ -29,7 +46,6 @@ const App = () => {
       <Route path="/menu" element={<Menu />}/>
       <Route path="/orderPlaced" element={<OrderPlaced />}/>
       <Route path="/orderNotPlaced" element={<OrderNotPlaced />}/>
-      <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/*" element={<Error />} />
 
