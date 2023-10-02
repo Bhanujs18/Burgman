@@ -105,7 +105,7 @@ const [quantity, setQuantity] = useState(1);
    const {name , img , price, category , rating}  = product;
 
    const data = (product:any , quantity:number) => {
-    setQuantity(quantity);
+     quantity < 0 ? 0 : setQuantity(quantity);
      setDisplay(true);
      const arr = { product , quantity};
      dispatch(addtocart(arr))
@@ -136,7 +136,7 @@ const [quantity, setQuantity] = useState(1);
             {(display!=true) ? 
             <div className="addtocart" onClick={()=>data(product , quantity)} style={{cursor:'pointer'}}> Add to cart </div> : 
             <div className="addtocarticon">
-            <AiFillMinusSquare onClick={()=>data(product , quantity-1)}/>
+            <AiFillMinusSquare onClick={()=>data(product , quantity-1 )}/>
             {quantity}
             <AiFillPlusSquare onClick={()=>data(product , quantity+1)} /> 
             </div> }

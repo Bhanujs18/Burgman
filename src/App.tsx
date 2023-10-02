@@ -18,20 +18,23 @@ import { auth } from "./firebaseAuth/firebase"
 
 const App = () => {
 
-  const [islog, setIslogin] = useState(false);
+  const [islog, setIslogin] = useState(JSON.parse(localStorage.getItem("isLogin?") as any) || false);
  
 useEffect(()=>{
     auth.onAuthStateChanged((user)=>{
-    console.log(user)
     if(user){
       setIslogin(true);
       console.log("login")
+      localStorage.setItem("isLogin>" , JSON.stringify(islog));
     }else{
       setIslogin(false);
       console.log("notloglin")
+      localStorage.setItem("isLogin>" , JSON.stringify(islog));
     }
   })
  },)
+
+ 
 
   return (
     

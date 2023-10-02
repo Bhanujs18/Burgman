@@ -10,6 +10,7 @@ background-image: url('https://i.pinimg.com/736x/86/66/1c/86661cf49e8be271efb9cf
 background-position: inherit;
 background-repeat: no-repeat;
 background-size: cover;
+height: 90vh;
 justify-content: center;
 background-position: top;
 align-items: center;
@@ -22,10 +23,11 @@ align-items: center;
         color: white;
         font-size: 1.5rem;
     }
+  
 .credential{
     display: block;
     margin: 2rem;
-    text-align: Center;
+   text-align: Center;
     outline: none;
     height: 2rem;
     color: green;
@@ -41,15 +43,20 @@ align-items: center;
 
 @media(max-width: 600px){
     background-position: center;
+    height: 100vh;
     .div{
         padding: 2rem 0rem;
         margin: 1rem 0rem;
+        gap: 1rem;
+        .credential{
+            margin: 2rem;
+        }
     }
 }
 `
 
 const Login = () => {
-    
+    JSON.parse(localStorage.getItem("isLogin?")as any);
     const navigate = useNavigate();
     const [error , setError] = useState("");
     const [values , setValues] = useState({
@@ -77,14 +84,14 @@ const Login = () => {
              console.log(res);
            
             navigate('/');
-            // localStorage.setItem("islogin?" , JSON.stringify(true));
+            localStorage.setItem("islogin?" , JSON.stringify(true));
             setError("Logged In SucessFully");
-            window. location. reload();
+            
 
         }).catch((error)=>{
             setError(error.message);
             alert("SignUp First !!!");
-            // localStorage.setItem("islogin?" , JSON.stringify(false));
+            localStorage.setItem("islogin?" , JSON.stringify(false));
         })
 
         }
@@ -96,22 +103,27 @@ const Login = () => {
         <div className="div">
         <div className="signup">
                 <p>Login</p>
+            {(error)?  <p style={{color:'green' , textAlign:'center' , backgroundColor:'white' , padding: "0.11rem"}}>{error}</p> : null}
             </div>
-        <img  className='logImage credential'  src="https://i.pinimg.com/originals/ab/d7/a4/abd7a42750a2268fbd1088994e623ade.gif" />
-       <input className="credential" type="text" name="email" placeholder="Email" onChange={dataset} />
-       <input className="credential" type="Password" name="password" placeholder="Password" onChange={dataset} />
+            <div style={{display:'flex' , alignItems:'center' , width: '100%' , justifyContent:'center'}}>
+                <div style={{width:'max-content' , gap:'1rem'}}>
+            <img  className='logImage credential'  src="https://i.pinimg.com/originals/ab/d7/a4/abd7a42750a2268fbd1088994e623ade.gif" />
+            <input className="credential" type="text" name="email" placeholder="Email" onChange={dataset} />
+            <input className="credential" type="Password" name="password" placeholder="Password" onChange={dataset} />
+               </div>
+           </div>
        <div className="credential">
-       <button className="button" style={{width:'100%'}} onClick={handleSignUP}>Login</button>
+       <button className="button" style={{width:'16rem'}} onClick={handleSignUP}>Login</button>
        </div>
-       <p style={{color:'white' , textAlign:'center'}}>{error}</p>
        <div className="credential">
-       <NavLink to='/signup'><button className="button" style={{width:'100%' , backgroundColor:'grey'}}>Sign Up / New User</button></NavLink>
+       <NavLink to='/signup'><button className="button" style={{width:'16rem'}}>Sign Up / New User</button></NavLink>
        </div>
+    
        {/* <div style={{fontSize:'1.2rem'}}>
        <NavLink to="/signup" style={{textDecoration:'none'}}><p style={{color: 'white' , textDecoration:'none', textAlign:'center' , WebkitTextStroke:'0.4px black' }}>New User? <span style={{color:'green'}}><i>Sign Up here</i></span></p></NavLink> */}
        </div>
        </div>
-      
+    
     </Wrapper>
   )
 }

@@ -3,11 +3,9 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import {AiOutlineShoppingCart} from 'react-icons/ai';
 import {BsList} from 'react-icons/bs';
-import { useEffect, useState } from "react";
+import { useState} from "react";
 import { CgClose } from 'react-icons/cg';
 import { useSelector } from "react-redux";
-import {  signOut } from "firebase/auth";
-import { auth } from "../firebaseAuth/firebase";
 
 const Wrapper = styled.section`
 display: block;
@@ -132,16 +130,11 @@ background-color: green;
 
 const NavBar = (val:any) => {
 
-  const [islog , setislog] = useState(val.islog || false)
+ 
   const [icon, setIcon] = useState(true);
 
+   
 
-  
-  const logout = () =>{
-    setIcon(true);
-    signOut(auth);
-     setislog(null);
-  }
  const products = useSelector((store:any) =>store.menu.cart) 
  const qty = products;
  const totalqty:number =  qty.reduce((accumulator:number , cur:any)=> accumulator+=cur.quantity,0);
@@ -163,12 +156,12 @@ const NavBar = (val:any) => {
         <NavLink className='navbar_link' to="/menu" onClick={()=>setIcon(true)}>Menu</NavLink>
         <NavLink className='navbar_link' to="/about" onClick={()=>setIcon(true)}>About</NavLink>
         <NavLink className='navbar_link' to="/contact" onClick={()=>setIcon(true)}>Contact</NavLink>
-        {(islog)? <NavLink to='' className='navbar_link' onClick={logout}>logout</NavLink> : <NavLink className='navbar_link' to="/login"  onClick={()=>setIcon(true)} >Login</NavLink>}
+        {(val.islog===false)? <NavLink className='navbar_link' to="/login"  onClick={()=>setIcon(true)} >Login</NavLink> : null}
         <NavLink className='navbar_link' to="/cart" onClick={()=>setIcon(true)} ><div className="cartdiv"><AiOutlineShoppingCart /><p className="cartnumber">{totalqty}</p></div></NavLink>
        
             </div>
 
-
+            
            
           
 

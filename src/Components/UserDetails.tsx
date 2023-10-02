@@ -1,4 +1,6 @@
+import { signOut } from "firebase/auth"
 import styled from "styled-components"
+import { auth } from "../firebaseAuth/firebase"
 
 const Wrapper = styled.section`
 display: flex;
@@ -11,6 +13,13 @@ padding: 1rem;
     gap: 1rem;
     display: flex;
     align-items: center;
+    .navbar_link{
+        color: white;
+        background-color: green;
+        text-decoration: none;
+        padding: 1rem;
+       cursor: pointer;
+    }
 .img{
     height: 12rem;
     width: 12rem;
@@ -34,7 +43,10 @@ padding: 1rem;
 `
 
 const UserDetails = ({user} : any) => {
+    const logout = () =>{
+        signOut(auth);
 
+      }
   return (
     <Wrapper>
         <div className="div">
@@ -47,6 +59,7 @@ const UserDetails = ({user} : any) => {
         <div>{user.email}</div>
         <div style={{fontSize:"0.7rem"}}><i>Authenticated by </i>{user.providerId}</div>
     </div>
+    <p  className='navbar_link' onClick={logout}>logout</p>
        </div>
     </Wrapper>
   )
