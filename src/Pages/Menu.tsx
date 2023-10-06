@@ -7,6 +7,7 @@ import { updatemenu } from "../features/menuSlice"
 import API from "../Links/link"
 import { useEffect } from "react"
 import axios from "axios"
+import MenuHeader from '../Components/MenuHeader';
 
 
 
@@ -28,6 +29,7 @@ menu(API);
   if(pro){
   return (
  <div style={{width:'100%'}}>
+  <MenuHeader text={'Menu'} />
   <img className='menu_banner' src='./logo/6.png' />
     <div className='card_div'> 
       {pro.map((product:any, index:any)=>{
@@ -40,6 +42,7 @@ menu(API);
 
   )}else{
     <p>API NOT FETCHING DATA...</p>
+    
   }
 }
 

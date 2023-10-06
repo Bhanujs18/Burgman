@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { removeitem } from "../features/menuSlice";
+import { addtocart, removeitem } from "../features/menuSlice";
 import {AiFillDelete} from 'react-icons/ai';
+import {AiFillMinusSquare , AiFillPlusSquare} from 'react-icons/ai';
+import { useState } from "react";
 
 const Wrapper=styled.section`
 
@@ -36,6 +38,16 @@ const Wrapper=styled.section`
       display: block;
       padding: 1rem;
       text-align: left;
+     
+      .addtocarticon{
+        display: flex;
+       align-items: center;
+       gap: 0.5rem;
+      font-size: 1.1rem;
+       color: green;
+       justify-content: baseline;
+      
+    }
     }
   
     }
@@ -67,11 +79,12 @@ const Wrapper=styled.section`
         font-size: 0.8rem;
         padding: 0.2rem;
         width: 100%;
+      
       .totalprice{
         display: none;
-      }
-       
-      }
+      
+    }
+      
       }
     }
 
@@ -89,7 +102,17 @@ const Card = ({product , qty}:any) => {
     dispatch(removeitem(id));
    }
 
+
+
+   const [quantity, setQuantity] = useState(qty);
+
+   const data = (product:any , quantity:number) => {
+    quantity < 0 ? 0 : setQuantity(quantity);
+    const arr = { product , quantity};
+    dispatch(addtocart(arr));
+  }
  
+
 
   return (
     <Wrapper>
@@ -100,9 +123,16 @@ const Card = ({product , qty}:any) => {
                      <img src={img} alt={name}  className="img"/>
                           <div className="cartdetails">
                              <p>{name}</p>
-                             <p>{qty} units</p>
-                             <p className="totalprice">Total price: Rs. {qty*price}/-</p>
+                             <div className="addtocarticon">
+                             <AiFillMinusSquare onClick={()=>data(product , quantity-1 )}/>
+                             {quantity}
+                             <AiFillPlusSquare onClick={()=>data(product , quantity+1)} /> 
+                             </div>
+                             <p className="totalprice">Total price: Rs. {(qty*price<0)? 0:qty*price}/-</p>
+                             
+                             
                           </div>
+                          
               </div>
       
            <div onClick={()=>remove(id)}  className="remove"><AiFillDelete /></div>

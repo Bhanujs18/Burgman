@@ -1,5 +1,6 @@
 
 import { styled } from "styled-components";
+import MenuHeader from "../Components/MenuHeader";
 
 const Wrapper = styled.section`
 text-align: justify;
@@ -59,6 +60,7 @@ const AboutUs = () =>{
 
     return(
         <Wrapper>
+          <MenuHeader text={'About us'} />
             <div className="whoweare">
             <div className="paradiv">
             <h1 className="parahead">Who We Are</h1>

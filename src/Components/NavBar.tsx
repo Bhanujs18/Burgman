@@ -9,12 +9,19 @@ import { useSelector } from "react-redux";
 
 const Wrapper = styled.section`
 display: block;
-background-color: green;
-
+position: fixed;
+width: 100%;
+z-index: 999;
+text-shadow: 2px 2px 2px black;
+.sticky{
+  position: fixed;
+  background-color: green;
+}
 .navbar{
     display: flex;
+    z-index: 999;
     gap: 1rem;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   
     justify-content: space-between;
     width: 100%;
 
@@ -35,18 +42,22 @@ background-color: green;
    .navbar_link{
       color: white;
       text-decoration: none;
+      font-size: 1.3rem;
       .cartdiv{
         display: flex;
         align-items: center;
         fonr-size: 1.4rem;
         .cartnumber{
           background-color: white;
-          color: green;
+          color: black;
+          text-shadow: none;
           font-size: 0.8rem;
           display: flex;
           justify-content: center;
-          height: 1.1rem;
-          width: 1.1rem;
+          height: 1.3rem;
+          tranform: translate(-50%,50%);
+          
+          width: 1.5rem;
           border-radius: 50%;
         }
       }
@@ -68,6 +79,7 @@ background-color: green;
       display:none;
     }
     .mobmenu{
+      text-shadow: none;
       display: block;
       background-color: white;
       color: green;
@@ -137,10 +149,27 @@ const NavBar = (val:any) => {
 
  const products = useSelector((store:any) =>store.menu.cart) 
  const qty = products;
- const totalqty:number =  qty.reduce((accumulator:number , cur:any)=> accumulator+=cur.quantity,0);
+ let totalqty:number =  qty.reduce((accumulator:number , cur:any)=> accumulator+=cur.quantity,0);
+ if (totalqty <0){
+  totalqty=0;
+ }
+
+ const [old , setOld] = useState('navbar');
+  window.onscroll = () => {
+    let temp;
+    let top = window.scrollY;
+    if(top > 100){
+      temp = "navbar sticky";
+    }
+    else{
+      temp = "navbar";
+    }
+    return setOld(temp);
+  }
+
   return (
     <Wrapper>
-        <div className="navbar">
+        <div className={old}>
             
             <div>
                 <NavLink to='/'><img className="navlogo" src='./logo/1.png' /></NavLink>

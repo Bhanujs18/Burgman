@@ -43,7 +43,7 @@ align-items: center;
 
 @media(max-width: 600px){
     background-position: center;
-    height: 100vh;
+    
     .div{
         padding: 2rem 0rem;
         margin: 1rem 0rem;
@@ -90,7 +90,6 @@ const Login = () => {
 
         }).catch((error)=>{
             setError(error.message);
-            alert("SignUp First !!!");
             localStorage.setItem("islogin?" , JSON.stringify(false));
         })
 
@@ -112,11 +111,13 @@ const Login = () => {
             <input className="credential" type="Password" name="password" placeholder="Password" onChange={dataset} />
                </div>
            </div>
+           <div>
        <div className="credential">
        <button className="button" style={{width:'16rem'}} onClick={handleSignUP}>Login</button>
        </div>
        <div className="credential">
        <NavLink to='/signup'><button className="button" style={{width:'16rem'}}>Sign Up / New User</button></NavLink>
+       </div>
        </div>
     
        {/* <div style={{fontSize:'1.2rem'}}>
