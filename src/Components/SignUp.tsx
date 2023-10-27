@@ -85,7 +85,7 @@ const SignUp = () => {
             const user = res.user;
             updateProfile(user ,{
                 displayName:name,
-                photoURL:"https://cdn-icons-png.flaticon.com/512/149/149071.png",
+                photoURL:"https://images.news18.com/ibnlive/uploads/2023/04/john-cena-birthday.jpg",
             })
             console.log(res);
         }).catch((error)=>{

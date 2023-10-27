@@ -13,10 +13,73 @@ position: fixed;
 width: 100%;
 z-index: 999;
 text-shadow: 2px 2px 2px black;
+
+
+transition: all 0.3s ease;
+
 .sticky{
-  position: fixed;
-  background-color: green;
+    display: flex;
+    z-index: 999;
+    gap: 1rem;
+    padding: 0.5rem 0rem;
+    background-color: green;
+    justify-content: space-between;
+    width: 100%;
+    .navlogo{
+        height: 3rem;
+        transition: all 0.3s ease;
+        padding: 0.4rem;
+        filter: drop-shadow(0 0 0.75rem black);
+       }
+    .mobmenu{
+      display: none;
+    }
+    .navbarlinks{
+        
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+        margin-right: 1.5rem;
+        text-shadow:none;
+   .navbar_link{
+    letter-spacing: 0.5px;
+    font-family: 'Luckiest Guy', cursive;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      .cartdiv{
+        display: flex;
+        align-items: center;
+        fonr-size: 1.4rem;
+        .cartnumber{
+          background-color: white;
+          color: black;
+          text-shadow: none;
+          font-size: 0.8rem;
+          display: flex;
+          justify-content: center;
+          height: 1.3rem;
+          tranform: translate(-50%,50%);
+          
+          width: 1.5rem;
+          border-radius: 50%;
+        }
+      }
+    }
+      }
+      .mobcart{
+      display: none;
+      }
+      .icons{
+       display: none;
+      } 
 }
+
+
+
+
+
 .navbar{
     display: flex;
     z-index: 999;
@@ -29,6 +92,7 @@ text-shadow: 2px 2px 2px black;
     .navlogo{
         height: 5rem;
         padding: 0.4rem;
+        transition: all 0.3s ease;
         filter: drop-shadow(0 0 0.75rem black);
        }
     .mobmenu{
@@ -40,9 +104,12 @@ text-shadow: 2px 2px 2px black;
         align-items: center;
         margin-right: 1.5rem;
    .navbar_link{
+    font-family: 'Luckiest Guy', cursive;
+    letter-spacing: 1px;
       color: white;
       text-decoration: none;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
       .cartdiv{
         display: flex;
         align-items: center;
@@ -159,7 +226,7 @@ const NavBar = (val:any) => {
     let temp;
     let top = window.scrollY;
     if(top > 100){
-      temp = "navbar sticky";
+      temp = "sticky";
     }
     else{
       temp = "navbar";
@@ -172,7 +239,7 @@ const NavBar = (val:any) => {
         <div className={old}>
             
             <div>
-                <NavLink to='/'><img className="navlogo" src='./logo/1.png' /></NavLink>
+                <NavLink to='/'><img className="navlogo" src='./logo/logo.png' /></NavLink>
             </div>
            
             <div className="icons">
@@ -181,6 +248,7 @@ const NavBar = (val:any) => {
             </div>
            
         <div  className= {icon ? "navbarlinks" : "mobmenu"}>
+        <NavLink className='navbar_link' to="/profile" onClick={()=>setIcon(true)}>Profile</NavLink>
         <NavLink className='navbar_link' to="/" onClick={()=>setIcon(true)}>Home</NavLink>
         <NavLink className='navbar_link' to="/menu" onClick={()=>setIcon(true)}>Menu</NavLink>
         <NavLink className='navbar_link' to="/about" onClick={()=>setIcon(true)}>About</NavLink>

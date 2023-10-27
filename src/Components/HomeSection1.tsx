@@ -1,43 +1,139 @@
-import {FaTruckMoving} from 'react-icons/fa';
+;
 import { styled } from 'styled-components';
-import {AiFillLock} from 'react-icons/ai'; 
-import {BiTimer} from 'react-icons/bi';
-import {BiSolidCheckShield} from 'react-icons/bi'
+
 
 const Wrapper = styled.section`
-background-image: url("./logo/4.jpg");
-font-size: 1rem;
-width: 100%;
-display: flex;
-justify-content: center;
-.hero2div{
-
-display: flex;
-flex-direction: row;
-justify-content: center;
-color: green;
-align-items: center;
-
-.heroSection-1-grids{
-padding: 1rem;
-width:22rem;
-  
-border-radius: 4%;
-align-items: center;
-color: white;
-
-.icons{
-    width:100%;
-    display: flex;
-    justify-content: center;
+background-image: url('https://res.cloudinary.com/dyqynjew8/image/upload/v1698396554/Screenshot_2023-10-27_141816-min_pl8ju2.png');
+background-repeat: no-repeat;
+background-size: cover;
 }
-}
+background-color: black;
+body {
+  background-color: black;
+ 
+
+.container {
+  width: 1200px !important;
+  padding: 0 !important;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  background:transparent;
+  @media screen and (min-width: 992px) and (max-width: 1439px) {
+    max-width: 1279px !important;
+    padding: 0 !important;
+    margin: 0 80px !important;
+    width: auto !important;
+  }
+
+  @media screen and (max-width: 991px) {
+    max-width: 959px !important;
+    margin: 0 16px !important;
+    padding: 0 !important;
+    width: auto !important;
+  }
 }
 
-@media (max-width : 960px){
-display: block;
-align-items: center;
-background-image: none;
+.gradient-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  background:transparent;
+  padding: 30px;
+  @media screen and (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.container-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: white;
+  padding: 2rem 0rem;
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 1.2px;
+  font-weight: 600;
+  line-height: 60px;
+}
+
+.card {
+  max-width: 550px;
+  border: 0;
+  background:transparent;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.container-card {
+  position: relative;
+  display: flex;
+  border: 2px solid transparent;
+  align-items:Center;
+  background-color: green;  background-clip: padding-box;
+  border-radius: 45px;
+  font-family: 'Luckiest Guy', cursive;
+  padding: 2rem;
+  .img {
+    width; 9rem;
+    height: 9rem;
+  }
+}
+
+.bg-green-box,
+.bg-white-box,
+.bg-yellow-box,
+.bg-blue-box {
+  position: relative;
+}
+
+.bg-green-box::after,
+.bg-white-box::after,
+.bg-yellow-box::after,
+.bg-blue-box::after {
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  right: -1px;
+  content: "";
+  z-index: -1;
+  border-radius: 45px;
+}
+
+.bg-green-box::after {
+  background: linear-gradient(71deg, #0d1212, #3da077, #0d1212);
+}
+
+.bg-white-box::after {
+  background: linear-gradient(71deg, #121013, #b0afb0, #121013);
+}
+
+.bg-yellow-box::after {
+  background: linear-gradient(71deg, #110e0e, #afa220, #110e0e);
+}
+
+.bg-blue-box::after {
+  background: linear-gradient(71deg, #0c0a0e, #5f6fad, #0c0a0e);
+}
+
+.card-title {
+  font-weight: 600;
+  color: white;
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 1.2px;
+  line-height: 40px;
+  font-style: normal;
+  font-size: 28px;
+  padding-bottom: 8px;
+}
+
+.card-description {
+  font-weight: 600;
+  line-height: 32px;
+  color: hsla(0, 0%, 100%, 0.5);
+  font-size: 16px;
+  max-width: 470px;
+}
 
 color: green;
 .hero2div{
@@ -58,28 +154,57 @@ color: green;
 `
 
 const HomeSection1 = () => {
-   
   return (
     <Wrapper>
-      <div className='hero2div'>
-           <div className='heroSection-1-grids'>
-            <p className='icons'><FaTruckMoving /></p>
-           <p className='icons'>Fastest and Secured Delivery</p>
-           </div >
-             <div  className='heroSection-1-grids'>
-             <p className='icons'><BiSolidCheckShield /></p>
-               <p className='icons'>Non-Contact Shipping</p>
-             </div>
-             <div  className='heroSection-1-grids'>
-             <p className='icons'><BiTimer /></p>
-              <p className='icons'>15 Days Return Policy</p>
-              </div>
-          <div className='heroSection-1-grids'>
-          <p className='icons'><AiFillLock /></p>
-          <p className='icons'>We Secure your data</p>
-         </div>
+   <div className="container">
+  {/* <p className="container-title">Here are the features<br />we’re proud of</p>
+ */}
+  <div className="gradient-cards">
+  <div className="card">
+      
+      <div className="container-card bg-blue-box">
+      <img className='img' src='https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/6517a314cd3c9a53a3a1d5ab/tqza-amscmm-3607-1-3607.png' />
+      <div>
+        <p className="card-title">Jumbo King</p>
+        <p className="card-description">Add To Cart</p>
+        </div>
       </div>
+    </div>
 
+    <div className="card">
+      
+      <div className="container-card bg-blue-box">
+      <img className='img' src='https://www.pngkit.com/png/full/379-3799698_source-burger-king-menu-png.png' />
+      <div>
+        <p className="card-title">Combo</p>
+        <p className="card-description">Add To Cart</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="card">
+      
+      <div className="container-card bg-blue-box">
+      <img className='img' src='https://res.cloudinary.com/dyqynjew8/image/upload/v1698398406/png-image_znmxdm.png' />
+      <div>
+        <p className="card-title">Crispy Veg</p>
+        <p className="card-description">Add To Cart</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="card">
+      
+      <div className="container-card bg-blue-box">
+      <img className='img' src='https://pngimg.com/d/burger_sandwich_PNG4157.png' />
+      <div>
+        <p className="card-title">Burgman Special</p>
+        <p className="card-description">Add To Cart</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     </Wrapper>
   )
 }

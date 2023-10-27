@@ -65,4 +65,4 @@ const ContactUs = () => {
     </Wrapper>
   ) 
 }
-export default  ContactUs  ;
+export default  ContactUs;

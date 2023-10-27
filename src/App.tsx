@@ -13,6 +13,7 @@ import Login from "./Pages/Login"
 import SignUp from "./Components/SignUp"
 import { useEffect , useState} from "react"
 import { auth } from "./firebaseAuth/firebase"
+import Profile from "./Pages/Profile"
 
 
 
@@ -38,7 +39,7 @@ useEffect(()=>{
 
   return (
     
-     <div>
+     <div  style={{width:"100%" , margin:'0px', padding:'0px'}}>
       <NavBar val={islog}/>
       <Routes>
       <Route path="/login" element={<Login />} />
@@ -50,6 +51,7 @@ useEffect(()=>{
       <Route path="/orderPlaced" element={<OrderPlaced />}/>
       <Route path="/orderNotPlaced" element={<OrderNotPlaced />}/>
       <Route path="/signup" element={<SignUp />} />
+      <Route path="/profile" element={<Profile />} />
       <Route path="/*" element={<Error />} />
 
       </Routes>

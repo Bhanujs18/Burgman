@@ -3,7 +3,7 @@ import CartCard from "../Components/CartCard";
 import { CheckOut } from "../Components/CheckOut";
 import { getAuth } from "firebase/auth";
 import Login from "./Login";
-import UserDetails from "../Components/UserDetails";
+
 import MenuHeader from "../Components/MenuHeader";
 import { NavLink } from "react-router-dom";
 // import { getAuth } from "firebase/auth";;
@@ -32,10 +32,9 @@ const Cart = () => {
   return (
   <div>
       <MenuHeader text={'Cart'} />
-
-    <UserDetails user={user} />
-
-    {(totalqty<=0) ? <NavLink style={{color:'green' , textDecoration:'none' , display:'flex' , justifyContent:'center' , width:'100%' , padding: '2rem'}} to='/menu'>Goto Menu</NavLink> :
+   
+  
+    {(totalqty<=0) ? <NavLink style={{color:'green' , textDecoration:'none' , display:'flex' , justifyContent:'center' , width:'100%' , padding: '2rem'}} to='/menu'>Cart Empty! Goto Menu</NavLink> :
 
     <div className="cart_div">
   

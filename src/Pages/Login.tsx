@@ -6,11 +6,11 @@ import { auth } from "../firebaseAuth/firebase";
 
 const Wrapper = styled.section`
 display: flex;
-background-image: url('https://i.pinimg.com/736x/86/66/1c/86661cf49e8be271efb9cf939d9e932e.jpg');
+background-image: url('./logo/logingif.gif');
 background-position: inherit;
 background-repeat: no-repeat;
 background-size: cover;
-height: 90vh;
+
 justify-content: center;
 background-position: top;
 align-items: center;
@@ -101,8 +101,8 @@ const Login = () => {
       
         <div className="div">
         <div className="signup">
-                <p>Login</p>
-            {(error)?  <p style={{color:'green' , textAlign:'center' , backgroundColor:'white' , padding: "0.11rem"}}>{error}</p> : null}
+                
+            {(error)?  <p style={{color:'green' , textAlign:'center' , backgroundColor:'white' , padding: "0.11rem" , zIndex:'2222'}}>{error}</p> : null}
             </div>
             <div style={{display:'flex' , alignItems:'center' , width: '100%' , justifyContent:'center'}}>
                 <div style={{width:'max-content' , gap:'1rem'}}>

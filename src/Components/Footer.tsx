@@ -2,27 +2,29 @@
 import { NavLink } from 'react-router-dom';
 import { styled } from 'styled-components';
 import {BsInstagram , BsFacebook , BsTwitter } from 'react-icons/bs';
-import {AiFillMessage} from 'react-icons/ai';
+import {BiLogoGmail} from 'react-icons/bi';
 
 const Wrapper = styled.section`
-
+margin:0rem;
+padding:0;
 background-color: green;
-
+height: 100%;
 .footerDiv{
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  
-
+  padding:0;
+  margin:0;
 
   .footer-div-sections{
     display: block;
     color: white;
-    
+    margin:0;
+    padding:0;
     .footerlogo{
       margin : 2rem;
-      height: 11rem;
+      height: 3rem;
       filter: drop-shadow(0 0 0.75rem black);
     }
     .footer-links{
@@ -85,7 +87,7 @@ const Footer = () => {
        
        
         <div className='footer-div-sections'>
-        <img alt="main-logo" src="./logo/1.png" className='footerlogo' />
+        <img alt="main-logo" src="./logo/logo.png" className='footerlogo' />
         </div>
        
        
@@ -110,7 +112,7 @@ const Footer = () => {
         <a href='https://www.instagram.com/' style={{color: "white"}}><BsInstagram className='footer-icons' /></a>
         <a href='https://www.facebook.com/' style={{color: "white"}}>    <BsFacebook className='footer-icons'/> </a>
         <a href='https://www.twitter.com/' style={{color: "white"}}>    <BsTwitter className='footer-icons'/> </a>
-        <a href='https://www.gmail.com/' style={{color: "white"}}>     <AiFillMessage className='footer-icons'/></a>
+        <a href='https://www.gmail.com/' style={{color: "white"}}>     <BiLogoGmail className='footer-icons'/></a>
          
         </div>
        
@@ -131,9 +133,9 @@ const Footer = () => {
 
   
      </div>
-     <p className='copyright'>© 2023 Tik Tik. All rights reserved</p>
+     <p className='copyright'>© 2023 Burgman All rights reserved</p>
     </Wrapper>
   )
 }
 
-export default Footer
+export default Footer;

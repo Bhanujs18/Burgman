@@ -18,23 +18,23 @@ const Home = () => {
 
   
   return (
-    <div >
+    <div style={{width:"100%" , margin:'0px' , padding:'0px' , position:'relative'}}>
       <div className="home">
-      <img className="home_img" src="./logo/3.jpg" />
+      <video autoPlay loop className="home_img" src="./logo/bn2.mp4" /> 
       <img className="home_img2" src="./logo/7.jpg" />
       <div className="explore">
-        <h1 className="tagline">Burgers, makes you Burgman</h1>
+        <h1 className="tagline">Burgers, makes you <span className="burgman">Burgman</span></h1>
         <div style={{display:'flex' , justifyContent:'center' ,  width:'100%'}}>
-        <NavLink to='/menu' style={{textDecoration:'none'}}><p className="explore_button">Explore Menu</p></NavLink> 
+        <NavLink to='/menu' style={{textDecoration:'none' }}><p className="explore_button" style={{border:'2px green solid'}}>Explore Menu</p></NavLink> 
         </div>
       </div>
       </div>
-      <img style={{width:'100%'}} src="./logo/6.png" />
+
       
       <Featured />
       <HomeSection1 />
       <HomeSection2 />
-     
+      <img style={{width:'100%'}} src="./logo/6.png" />
     </div>
   )
 }

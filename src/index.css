@@ -1,16 +1,36 @@
 @import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Josefin+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nosifer&display=swap');
+
+
 *{
   font-family: 'Martian Mono', monospace;
+ 
+  padding: 0px;
+  margin: 0px;
+
+}
+html{
+  padding: 0;
+  margin: 0;
+  background: green;
 }
 body{
   margin:0px;
   padding: 0px;
   width: 100%;
+  height: 100%;
+  background-color: green;
+
 }
 
 .home{
  display: flex;
  position: relative;
+ width: 100%;
+ margin: 0;
+ padding: 0;
 }
 
 .card_div{
@@ -79,6 +99,10 @@ body{
 }
 .home_img{
   width: 100%;
+  margin: 0;
+  padding: 0;
+  top:0;
+  bottom: 0;
 }
 .explore{
   position: absolute;
@@ -86,21 +110,24 @@ body{
   align-items: center;
   top:50%;
   left:50%;
-  transform: translate(-50%,50%);
+  width:100%;
+  transform: translate(-50%,-50%);
 }
 
 .explore_button{
+  letter-spacing: 0.5px;
+  font-family: 'Luckiest Guy', cursive;
   display: flex;
+  border: 2px rgb(255, 255, 255) solid;
   background-color: green;
   color: white;
   justify-content: center;
-  border: none;
   padding: 0.3rem 3rem;
-  text-decoration: none;
-
+  border-radius: 9px;
+  transition: all 0.3s ease;
 }
 .explore_button:hover{
-  border: none;
+  border: 2px green solid;
   background-color: rgb(255, 255, 255);
   color:green;
 
@@ -129,12 +156,19 @@ body{
   background-color: rgb(255, 255, 255);
   border: 2px solid green;
 }
-
+.burgman{
+  font-family: 'Nosifer', sans-serif;
+  color: #FFDE59;
+}
 .tagline{
-  font-size: 2.4rem;
+  font-family: 'Nosifer', sans-serif;
+  font-size: 3rem;
+  z-index:99;
   color: white;
+  text-align: center;
+  width:100%;
   @media(max-width:1433px){
-    font-size: 2rem;
+    font-size: 3rem;
   }
   @media(max-width:1176px){
     font-size: 1.5rem;
