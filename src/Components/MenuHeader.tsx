@@ -14,17 +14,21 @@ padding: 0;
 
 .vid{
   width: 100%;
-  height: 20rem;
+  height: 15rem;
 }
 .videotext{
   text-shadow: 1px 1px 2px black;
   top:50%;
   left:50%;
+  font-family: 'Luckiest Guy', cursive;
   align-text: center;
   position: absolute;
   color: white;
   transform: translate(-50%,50%);
   font-size: 3rem;
+  h1{
+    font-family: 'Luckiest Guy', cursive;
+  }
 }
 
 @media(max-width:1240px){
@@ -59,7 +63,7 @@ const MenuHeader = ({text}:any) => {
   return (
     <Wrapper>
          <div>
-        <img className='vid' src='https://b.zmtcdn.com/data/pictures/2/20256032/9b4930c0ca4bd449f2a7a3bd82d645be.jpg?fit=around|960:500&crop=960:500;*,*' alt='vid'/>
+        <img className='vid' src='https://res.cloudinary.com/dyqynjew8/image/upload/v1698655077/Screenshot_2023-10-30_140734_zxivqh.png' alt='vid'/>
          <div className='videotext'>
           <h1>{text}</h1>
           <p className='tagline'></p>

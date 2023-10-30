@@ -39,7 +39,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   background:transparent;
-  padding: 30px;
+  padding: 10px;
   @media screen and (max-width: 991px) {
     grid-template-columns: 1fr;
   }
@@ -72,7 +72,7 @@ body {
   background-color: green;  background-clip: padding-box;
   border-radius: 45px;
   font-family: 'Luckiest Guy', cursive;
-  padding: 2rem;
+  padding: 1rem;
   .img {
     width; 9rem;
     height: 9rem;
@@ -163,8 +163,8 @@ const HomeSection1 = () => {
   <div className="card">
       
       <div className="container-card bg-blue-box">
-      <img className='img' src='https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/6517a314cd3c9a53a3a1d5ab/tqza-amscmm-3607-1-3607.png' />
-      <div>
+      <img className='img' src='https://res.cloudinary.com/dyqynjew8/image/upload/v1698651582/hamburger-veggie-burger-take-out-fast-food-kebab-delicious-beef-burger-removebg-preview_tmotz6.png' />
+      <div style={{width:'100%', textAlign:'center'}}>
         <p className="card-title">Jumbo King</p>
         <p className="card-description">Add To Cart</p>
         </div>
@@ -174,8 +174,8 @@ const HomeSection1 = () => {
     <div className="card">
       
       <div className="container-card bg-blue-box">
-      <img className='img' src='https://www.pngkit.com/png/full/379-3799698_source-burger-king-menu-png.png' />
-      <div>
+      <img className='img' src='https://res.cloudinary.com/dyqynjew8/image/upload/v1698651580/png-transparent-whopper-india-veggie-burger-hamburger-vegetarian-cuisine-burger-king-food-beef-recipe-removebg-preview_abqjqn.png' />
+      <div style={{width:'100%', textAlign:'center'}}>
         <p className="card-title">Combo</p>
         <p className="card-description">Add To Cart</p>
         </div>
@@ -185,8 +185,8 @@ const HomeSection1 = () => {
     <div className="card">
       
       <div className="container-card bg-blue-box">
-      <img className='img' src='https://res.cloudinary.com/dyqynjew8/image/upload/v1698398406/png-image_znmxdm.png' />
-      <div>
+      <img className='img' src='https://res.cloudinary.com/dyqynjew8/image/upload/v1698651578/compngwingnzfif-removebg-preview_vtsxsz.png' />
+      <div style={{width:'100%', textAlign:'center'}}>
         <p className="card-title">Crispy Veg</p>
         <p className="card-description">Add To Cart</p>
         </div>
@@ -196,8 +196,8 @@ const HomeSection1 = () => {
     <div className="card">
       
       <div className="container-card bg-blue-box">
-      <img className='img' src='https://pngimg.com/d/burger_sandwich_PNG4157.png' />
-      <div>
+      <img className='img' src='https://res.cloudinary.com/dyqynjew8/image/upload/v1698651578/french-fries-american-food-dish-ham-and-cheese-sandwich-slider-removebg-preview_gm843g.png' />
+      <div style={{width:'100%', textAlign:'center'}}>
         <p className="card-title">Burgman Special</p>
         <p className="card-description">Add To Cart</p>
         </div>

@@ -60,7 +60,9 @@ const AboutUs = () =>{
 
     return(
         <Wrapper>
+          
           <MenuHeader text={'About us'} />
+          <img style={{width:'100%'}} loading="lazy" src="https://res.cloudinary.com/dyqynjew8/image/upload/v1698661366/Burgers_Makes_you_Burgman_kvfa2b.png"  />
             <div className="whoweare">
             <div className="paradiv">
             <h1 className="parahead">Who We Are</h1>

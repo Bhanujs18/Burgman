@@ -6,12 +6,16 @@ import { addtocart } from "../features/menuSlice";
 
 
 const Wrapper=styled.section`
-  .card{
-  
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    display: flex;
-    height: 10rem;
 
+  .card{
+    color: white;
+    border: 2px green solid;
+    background-color: green;
+    // box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    display: flex;
+    overflow: hidden;
+    height: 10rem;
+    border-radius: 12px;
     .img_and_price{
     display: flex;
     gap: 0.2rem;
@@ -21,6 +25,7 @@ const Wrapper=styled.section`
         align-items: center;
         gap: 1rem;
         font-size: 0.8rem;
+        
         padding-top: 1rem;
         padding-left: 1rem;
         justify-content: left;
@@ -29,6 +34,7 @@ const Wrapper=styled.section`
     .addtocart{
         display:flex;
         gap: 0.4rem;
+        color: white;
         align-items: center;
         padding: 0.1rem;
     }
@@ -36,6 +42,7 @@ const Wrapper=styled.section`
       display: flex;
      align-items: center;
      gap: 0.5rem;
+     color: white;
     font-size: 1.1rem;
     }
     }
@@ -122,11 +129,11 @@ const [quantity, setQuantity] = useState(1);
                           <div>
                                  <div className="nameandicon">
                                     <img src={category} style={{height: "1rem" , width: "1rem"}}/>
-                                    <div style={{display:'flex', alignItems:'center'}}>{name}</div>
+                                    <div style={{display:'flex', alignItems:'center' ,letterSpacing:'0.7px',fontFamily:'Luckiest Guy, cursive', fontSize:'1.2rem'}}>{name}</div>
                                  </div>
                           <div className="nameandicon">
-                           <p>Price : Rs.{price}/-</p>
-                           <p> {rating}⭐</p>
+                           <p style={{letterSpacing:'0.7px',fontFamily:'Luckiest Guy, cursive', fontSize:'1rem'}}>Price : Rs.{price}/-</p>
+                           <p style={{letterSpacing:'0.7px',fontFamily:'Luckiest Guy, cursive', fontSize:'1rem'}}> {rating}⭐</p>
                            </div>
 
 
@@ -134,8 +141,8 @@ const [quantity, setQuantity] = useState(1);
             
 
             {(display!=true) ? 
-            <div className="addtocart" onClick={()=>data(product , quantity)} style={{cursor:'pointer'}}> Add to cart </div> : 
-            <div className="addtocarticon">
+            <div className="addtocart" onClick={()=>data(product , quantity)} style={{letterSpacing:'0.7px',fontFamily:'Luckiest Guy, cursive', fontSize:'1rem',cursor:'pointer'}}> Add to cart </div> : 
+            <div className="addtocarticon" style={{letterSpacing:'0.7px',fontFamily:'Luckiest Guy, cursive', fontSize:'1.2rem'}}>
             <AiFillMinusSquare onClick={()=>data(product , quantity-1 )}/>
             {quantity}
             <AiFillPlusSquare onClick={()=>data(product , quantity+1)} /> 

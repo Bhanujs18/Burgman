@@ -1,13 +1,11 @@
 import { getAuth } from "firebase/auth";
 import UserDetails from "../Components/UserDetails";
-import { useNavigate } from "react-router-dom";
-import MenuHeader from "../Components/MenuHeader";import { useEffect } from "react";
+import MenuHeader from "../Components/MenuHeader";
+import Login from "./Login";
 ;
 
 
 const Profile = () => {
-
-    const navigate = useNavigate();
 
     const auth = getAuth();
     const user = auth.currentUser;
@@ -20,7 +18,11 @@ const Profile = () => {
         )
     }
     else{
-        navigate('/login');
+        return(
+            <div>
+        <Login />
+        </div>
+        )
        }
 }
 

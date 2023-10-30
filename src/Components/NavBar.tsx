@@ -18,6 +18,7 @@ text-shadow: 2px 2px 2px black;
 transition: all 0.3s ease;
 
 .sticky{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     display: flex;
     z-index: 999;
     gap: 1rem;
@@ -30,6 +31,7 @@ transition: all 0.3s ease;
         transition: all 0.3s ease;
         padding: 0.4rem;
         filter: drop-shadow(0 0 0.75rem black);
+       
        }
     .mobmenu{
       display: none;
@@ -53,6 +55,7 @@ transition: all 0.3s ease;
         align-items: center;
         fonr-size: 1.4rem;
         .cartnumber{
+          font-family: 'Luckiest Guy', cursive;
           background-color: white;
           color: black;
           text-shadow: none;
@@ -61,11 +64,15 @@ transition: all 0.3s ease;
           justify-content: center;
           height: 1.3rem;
           tranform: translate(-50%,50%);
-          
+          background-color: #FFDE59;
+          color: black;
           width: 1.5rem;
           border-radius: 50%;
         }
       }
+    }
+    .navbar_link:focus{
+      color: #FFDE59;
     }
       }
       .mobcart{
@@ -115,8 +122,9 @@ transition: all 0.3s ease;
         align-items: center;
         fonr-size: 1.4rem;
         .cartnumber{
-          background-color: white;
+          background-color: #FFDE59;
           color: black;
+          font-family: 'Luckiest Guy', cursive;
           text-shadow: none;
           font-size: 0.8rem;
           display: flex;
@@ -129,6 +137,9 @@ transition: all 0.3s ease;
         }
       }
     }
+    .navbar_link:focus{
+      color: #FFDE59;
+    }
       }
       .mobcart{
       display: none;
@@ -139,7 +150,7 @@ transition: all 0.3s ease;
 
 }
 
-@media(max-width:770px){
+@media(max-width:956px){
   .navbar{
     display: flex;
     .navbarlinks{
@@ -176,8 +187,8 @@ transition: all 0.3s ease;
       font-size: 1.4rem;
       .cartnumber1{
        display:flex;
-       background-color: white;
-       color: green;
+       background-color: #FFDE59;
+       color: black;
        font-size:1rem;
        border-radius: 50%:
        
@@ -205,6 +216,88 @@ transition: all 0.3s ease;
 
   }
 }
+
+
+
+
+
+
+@media(max-width:770px){
+  .sticky{
+    display: flex;
+    .navbarlinks{
+      display:none;
+    }
+    .mobmenu{
+      text-shadow: none;
+      display: block;
+      background-color: white;
+      color: green;
+      gap: 2rem;
+      width:100%;
+      z-index: 999;
+      .navbar_link{
+        display: block;
+        padding: 2rem;
+        position: relative;
+        color: green;
+        text-decoration: none;
+        .cartdiv{
+          display: flex;
+        }
+      }
+       
+    }
+    .mobcart{
+    display: flex;
+    color: white;
+    text-decoration: none;
+    align-items: center;
+    .cartdiv1{
+      display: flex;
+      align-items:center;
+      font-size: 1.4rem;
+      .cartnumber1{
+       display:flex;
+       background-color: #FFDE59;
+       color: black;
+       font-size:1rem;
+       border-radius: 50%:
+       
+      }
+    }
+    }
+    .icons{
+      display: flex;
+      color: white;
+      font-size: 3rem;
+      cursor: pointer;
+
+    .open{
+      color: white;
+      position: relative;
+    }
+    .close{
+      z-index: 999;
+      position: relative;
+    }
+
+
+
+    }
+
+  }
+}
+
+
+@media(max-width: 460px){
+  .navbar{
+    .navlogo{
+      height: 3rem;
+    }
+  }
+ 
+}
 `
 
 const NavBar = (val:any) => {
@@ -225,7 +318,7 @@ const NavBar = (val:any) => {
   window.onscroll = () => {
     let temp;
     let top = window.scrollY;
-    if(top > 100){
+    if(top > 50){
       temp = "sticky";
     }
     else{
@@ -248,11 +341,11 @@ const NavBar = (val:any) => {
             </div>
            
         <div  className= {icon ? "navbarlinks" : "mobmenu"}>
-        <NavLink className='navbar_link' to="/profile" onClick={()=>setIcon(true)}>Profile</NavLink>
         <NavLink className='navbar_link' to="/" onClick={()=>setIcon(true)}>Home</NavLink>
         <NavLink className='navbar_link' to="/menu" onClick={()=>setIcon(true)}>Menu</NavLink>
         <NavLink className='navbar_link' to="/about" onClick={()=>setIcon(true)}>About</NavLink>
         <NavLink className='navbar_link' to="/contact" onClick={()=>setIcon(true)}>Contact</NavLink>
+        <NavLink className='navbar_link' to="/profile" onClick={()=>setIcon(true)}>Profile</NavLink>
         {(val.islog===false)? <NavLink className='navbar_link' to="/login"  onClick={()=>setIcon(true)} >Login</NavLink> : null}
         <NavLink className='navbar_link' to="/cart" onClick={()=>setIcon(true)} ><div className="cartdiv"><AiOutlineShoppingCart /><p className="cartnumber">{totalqty}</p></div></NavLink>
        

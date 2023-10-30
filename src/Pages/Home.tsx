@@ -18,10 +18,10 @@ const Home = () => {
 
   
   return (
-    <div style={{width:"100%" , margin:'0px' , padding:'0px' , position:'relative'}}>
+    <div style={{ overflow: 'hidden',width:"100%" , margin:'0px' , padding:'0px' , position:'relative'}}>
       <div className="home">
       <video autoPlay loop className="home_img" src="./logo/bn2.mp4" /> 
-      <img className="home_img2" src="./logo/7.jpg" />
+      {/* <img className="home_img2" src="./logo/7.jpg" /> */}
       <div className="explore">
         <h1 className="tagline">Burgers, makes you <span className="burgman">Burgman</span></h1>
         <div style={{display:'flex' , justifyContent:'center' ,  width:'100%'}}>
@@ -30,11 +30,11 @@ const Home = () => {
       </div>
       </div>
 
-      
+      <img style={{width:'100%'}} src="./logo/6.png" />
       <Featured />
       <HomeSection1 />
       <HomeSection2 />
-      <img style={{width:'100%'}} src="./logo/6.png" />
+     
     </div>
   )
 }

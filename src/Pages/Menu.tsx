@@ -30,7 +30,7 @@ menu(API);
   return (
  <div style={{width:'100%'}}>
   <MenuHeader text={'Menu'} />
-  <img className='menu_banner' src='./logo/6.png' />
+  {/* <img className='menu_banner' src='./logo/6.png' /> */}
     <div className='card_div'> 
       {pro.map((product:any, index:any)=>{
        return( 

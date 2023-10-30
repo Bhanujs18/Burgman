@@ -39,7 +39,7 @@ useEffect(()=>{
 
   return (
     
-     <div  style={{width:"100%" , margin:'0px', padding:'0px'}}>
+     <div  style={{width:"100%" , margin:'0px', padding:'0px' , height:'100%'}}>
       <NavBar val={islog}/>
       <Routes>
       <Route path="/login" element={<Login />} />
@@ -53,10 +53,8 @@ useEffect(()=>{
       <Route path="/signup" element={<SignUp />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/*" element={<Error />} />
-
       </Routes>
       <Footer />
-
       </div>
      
    

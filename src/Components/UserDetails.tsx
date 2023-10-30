@@ -23,6 +23,8 @@ padding: 1rem;
 .img{
     height: 12rem;
     width: 12rem;
+    border-radius: 50%;
+    border: 2px green solid;
 }
 }
 
