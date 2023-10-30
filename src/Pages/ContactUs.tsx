@@ -139,7 +139,7 @@ const ContactUs = () => {
                 <Inputs type="email" placeholder="Email"></Inputs>
                 <textarea
                   style={{ height: "5rem" }}
-                  type="text"
+                  typeof="text"
                   placeholder="Message..."
                   name="message"
                   className='textarea'
@@ -165,9 +165,8 @@ const ContactUs = () => {
           width="100%"
           height="250"
           title="map"
-          allowfullscreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+    
           style={{backgroundColor:'#274957'}}
         ></iframe>
     
