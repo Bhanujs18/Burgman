@@ -11,16 +11,13 @@ const Wrapper = styled.section`
 display: block;
 position: fixed;
 width: 100%;
-z-index: 999;
+z-index: 9;
 text-shadow: 2px 2px 2px black;
-
-
 transition: all 0.3s ease;
-
 .sticky{
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
     display: flex;
-    z-index: 999;
+    z-index: 99;
     gap: 1rem;
     padding: 0.5rem 0rem;
     background-color: green;
@@ -89,7 +86,7 @@ transition: all 0.3s ease;
 
 .navbar{
     display: flex;
-    z-index: 999;
+    z-index: 99;
     gap: 1rem;
    
     justify-content: space-between;
@@ -206,7 +203,7 @@ transition: all 0.3s ease;
       position: relative;
     }
     .close{
-      z-index: 999;
+      z-index: 99;
       position: relative;
     }
 
@@ -235,7 +232,7 @@ transition: all 0.3s ease;
       color: green;
       gap: 2rem;
       width:100%;
-      z-index: 999;
+      z-index: 99;
       .navbar_link{
         display: block;
         padding: 2rem;
@@ -278,7 +275,7 @@ transition: all 0.3s ease;
       position: relative;
     }
     .close{
-      z-index: 999;
+      z-index: 99;
       position: relative;
     }
 

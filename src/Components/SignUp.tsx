@@ -114,7 +114,7 @@ const SignUp = () => {
        </div>
        <input className="credential" name="email" type="text" placeholder="Email" onChange={dataset} />
        <input className="credential" name="password" type="Password" placeholder="Password" onChange={dataset} />
-       <p style={{color:'white' , textAlign:'center'}}>{error}</p>
+       <p className="error">{error}</p>
        </div>
       
        </div>

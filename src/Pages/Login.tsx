@@ -4,6 +4,8 @@ import { NavLink, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { auth } from "../firebaseAuth/firebase";
 
+import { getAuth, sendEmailVerification } from "firebase/auth";
+
 const Wrapper = styled.section`
 display: flex;
 background-image: url('https://res.cloudinary.com/dyqynjew8/image/upload/v1699076264/Screenshot_2023-11-04_110719_phu4xk.png');
@@ -71,11 +73,28 @@ const Login = () => {
        password:""
     });
      
+
+
+
     const dataset = (e:any) =>{
         e.preventDefault();
         const name = e.target.name;
         const value = e.target.value;
         setValues({...values ,[name]:value})
+    }
+
+    
+const sendingMail = () =>{
+    const {email} = values;
+    if(!email){
+        setError("Enter Mail to reset password");
+        return;
+    }
+    const auth = getAuth();
+    sendEmailVerification(auth.currentUser as any)
+      .then(() => {
+          alert("Sent");
+      });
     }
 
         const handleSignUP = () =>{
@@ -107,7 +126,7 @@ const Login = () => {
         <div className="div">
         <div className="signup">
                 
-            {(error)?  <p style={{color:'green' , textAlign:'center' , backgroundColor:'white' , padding: "0.11rem" , zIndex:'2222'}}>{error}</p> : null}
+            {(error)?  <p className="error">{error}</p> : null}
             </div>
             <div style={{display:'flex' , alignItems:'center' , width: '100%' , justifyContent:'center'}}>
                 <div style={{margin:'0' , padding:'0'}} className="loginBox">
@@ -115,6 +134,9 @@ const Login = () => {
             <img  className='logImage credential'  src="https://i.pinimg.com/originals/ab/d7/a4/abd7a42750a2268fbd1088994e623ade.gif" />
             <input className="credential" type="text" name="email" placeholder="Email" onChange={dataset} />
             <input className="credential" type="Password" name="password" placeholder="Password" onChange={dataset} />
+            <div style={{display:'flex' , justifyContent:'center'}}>
+            <p onClick={sendingMail} style={{textAlign:'center' , cursor:'pointer' , width:'max-content'}}>Forgot password?</p>
+            </div>
             </div>
                </div>
            </div>

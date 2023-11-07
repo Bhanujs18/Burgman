@@ -1,11 +1,11 @@
 
 import { styled } from "styled-components";
 import MenuHeader from "../Components/MenuHeader";
-import { useRef } from "react";
-import useLazyLoad from "../useLazyLoad";
+
 
 const Wrapper = styled.section`
 text-align: justify;
+color: #E7E7E7;
 .contactTitle{
     display: flex;
     align-items: center;
@@ -13,16 +13,19 @@ text-align: justify;
   }
   .whoweare{
     display: flex;
+    background:black;
     justify-content: center;
     padding: 2rem 2rem;
     .paradiv{
       display: flex;
       .parahead{
-        width: 20%
+        width: 25%;
+        font-family: 'Luckiest Guy', cursive;
+
       }
       .para{
-        width: 80%;
-       
+        width: 75%;
+       font-style:italic;
       }
     }
   }
@@ -55,8 +58,7 @@ text-align: justify;
 
 const AboutUs = () =>{
 
-const triggerref = useRef(null)
-const useLazyLoad = ({ triggerRef, onGrabData, options })
+
     return(
         <Wrapper>
           
@@ -67,8 +69,7 @@ const useLazyLoad = ({ triggerRef, onGrabData, options })
             <hr  style={{margin: "1rem"}}/>
             <p className="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, corrupti, eum veniam vel, iure porro expedita nostrum iste asperiores ipsa quam praesentium dolor assumenda. Eius asperiores aspernatur sit explicabo iste.
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, corrupti, eum veniam vel, iure porro expedita nostrum iste asperiores ipsa quam praesentium dolor assumenda. Eius asperiores aspernatur sit explicabo iste.
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, corrupti, eum veniam vel, iure porro expedita nostrum iste asperiores ipsa quam praesentium dolor assumenda. Eius asperiores aspernatur sit explicabo iste.
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam, corrupti, eum veniam vel, iure porro expedita nostrum iste asperiores ipsa quam praesentium dolor assumenda. Eius asperiores aspernatur sit explicabo iste.
+
             </p>
             </div>
             </div>
@@ -76,7 +77,7 @@ const useLazyLoad = ({ triggerRef, onGrabData, options })
         
             <div>
              
-                 <img ref={triggerref} style={{width:'100%'}} loading="lazy" src="https://res.cloudinary.com/dyqynjew8/image/upload/v1698661366/Burgers_Makes_you_Burgman_kvfa2b.png"  /> 
+                 <img  style={{width:'100%'}} loading="lazy" src="https://res.cloudinary.com/dyqynjew8/image/upload/v1698661366/Burgers_Makes_you_Burgman_kvfa2b.png"  /> 
               
               </div>
             <div className="whoweare">

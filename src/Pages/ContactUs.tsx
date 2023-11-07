@@ -11,7 +11,6 @@ const ContactPage = styled.div`
   .heading {
     font-size: 2rem;
     text-align: center;
-
     text-transform: uppercase;
     color: white;
     margin: 0;

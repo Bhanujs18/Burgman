@@ -1,12 +1,16 @@
 import { useSelector } from "react-redux";
 import styled from "styled-components"
+import MenuHeader from "../Components/MenuHeader";
+import Countdown from "react-countdown";
 
 const Wrapper = styled.section`
 
 display: block;
 width: 100%;
 justify-content: center;
-
+background-color: White;
+// background-color: black;
+color: black;
 
 .order_heading{
     padding: 2rem;
@@ -25,45 +29,61 @@ justify-content: center;
 .order_placed_div{
 display: flex;
 width: 100%;
-justify-content: center;
+justify-content: space-around;
 
 .order_div{
     display: flex;
+    justify-content: space-around;
     align-items: center;
     gap: 1rem;
+    border-radius: 15px;
+    overflow:hidden;
     margin: 2rem;
-    background-color: green;
-    color: white;
+    // background-color: #E7E7E7;
+    color: green;
     width:60%;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 .order_placed_details{
-    display: block;
+    display: grid;
     align-items: center;
     gap: 1rem;
+   
      .order_placed_img{
-       
+             display: flex;
             height: 17rem;
-            width: 30rem;
+            width: 8rem;
                       }
+                      .time{
+                        font-family: 'Luckiest Guy', cursive;
+                        letter-spacing: 2px;
+                        text-align:Center;
+                        font-size: 1.5rem;
+                      }
+                     }
+                     .details{
+                        background-color: rgb(1,2,3,0.1);
+                        padding: 2rem;
+                        border-radius: 9px;
+                     }
+                     .details p{
+                       
+                        font-family: 'Luckiest Guy', cursive;
+                          letter-spacing: 2px;
                      }
                     }
                 }
 
-                @media(max-width:1256px){
+                @media(max-width:600px){
                     font-size: 0.9rem;
                     .order_placed_div{
                         .order_div{
                             display: block;
                             align-items: center;
+                            width: 100%;
                             background-color: white;
                             box-shadow: none;
-                            color: black;
-                            .order_placed_details{
-                                
-                                display: flex;
-                                justify-content: center;
-                            }
                             .details{
+                                width: 90%;
                                 padding-top: 1rem;
                                 text-align: center;
                                 .paid{
@@ -86,24 +106,28 @@ const OrderPlaced = () => {
 
   return (
     <Wrapper>
-          <div className="order_heading">
-            <img className="tick" src="./logo/8.gif" />
-            Order Placed
-          </div>
-           <p style={{textAlign:'center'}}>Your Order will be delivered S👀n</p>
+        <MenuHeader text={"Order PLaced"} />
           <div className="order_placed_div">
              <div className="order_div">
                 <div className="order_placed_details">
-                  <img className="order_placed_img" src="https://www.icegif.com/wp-content/uploads/spongebob-squarepants-krabby-patty.gif" />
+                                           <div style={{display:'flex' , justifyContent:'center' , alignItems:'center'}}>
+                                            <img className="order_placed_img" src="https://res.cloudinary.com/dyqynjew8/image/upload/v1699385996/juicy-rocket_um3vuf.gif" />
+                                            </div>
+
+                    <Countdown className="time" autoStart date={Date.now() + 10000000} />
                 </div>
+        <div style={{display:'flex' , alignItems:'center' , justifyContent:'center'}}>
+
          <div className="details">
+         <p> Order Details</p>
          <p>Total qty = {totalqty} units</p>
          <p>Total Amount = Rs {totalamt}/-</p>
          <p>Tax 5% = Rs {Math.round(0.05*totalamt)}/-</p>
          <hr />
          <p className="paid">Paid = Rs {totalamt+(Math.round(0.05*totalamt))}/-</p>
          <hr />
-      
+         </div>
+
         </div>
         </div>
           </div>

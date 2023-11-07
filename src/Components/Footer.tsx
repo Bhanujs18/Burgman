@@ -8,6 +8,7 @@ import GetTouch from "./GetTouch";
 const Wrapper = styled.section`
 background: #010203;
 display: flex;
+padding: 2rem 0rem 0rem 0rem;
 justify-content: center;
 width: 100%;
 color: white;
@@ -79,6 +80,13 @@ const Container = styled.div`
       display: none;
     }
   }
+
+
+  @media(max-width: 600px){
+  .quickLinks{
+    padding: 1rem 0rem 0rem 0rem;
+  }
+  }
 `;
 
 const Footer = () => {
@@ -146,7 +154,7 @@ const Footer = () => {
             {/* <p> +91 999 199 8060</p> */}
             <p> www.Burgman.com</p>
             <p> info@Burgman.com</p>
-            <p className="text">
+            <p className="">
              Burgman,
             Planet 322B, Mars.
             </p>

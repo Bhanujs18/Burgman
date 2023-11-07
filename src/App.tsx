@@ -30,11 +30,11 @@ useEffect(()=>{
       localStorage.setItem("isLogin>" , JSON.stringify(islog));
     }else{
       setIslogin(false);
-      console.log("notloglin")
+      
       localStorage.setItem("isLogin>" , JSON.stringify(islog));
     }
   })
- },)
+ },);
 
  
 

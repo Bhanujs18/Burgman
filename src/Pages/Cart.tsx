@@ -30,7 +30,7 @@ const Cart = () => {
   }
 
   return (
-  <div>
+  <div style={{background:'white'}}>
       <MenuHeader text={'Cart'} />
    
   
@@ -55,8 +55,9 @@ const Cart = () => {
          <hr />
          <p>Total Amount Payable Rs {totalamt+(Math.round(0.05*totalamt))}/-</p>
          <hr />
+         <div>
          {(totalamt>0)? <CheckOut  pay={pay}  />: <p style={{color: 'red'}}>Add items to checkout</p>}
-        
+        </div>
         </div>
     </div>
     

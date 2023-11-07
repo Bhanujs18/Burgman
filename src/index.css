@@ -22,7 +22,7 @@ body{
   padding: 0px;
   width: 100%;
   height: 100%;
-  background-color: #E7E7E7;
+
 
 }
 
@@ -30,6 +30,7 @@ body{
  display: flex;
  position: relative;
  width: 100%;
+ height: 100%;
  margin: 0;
  padding: 0;
 }
@@ -191,6 +192,7 @@ flex-wrap: wrap;
 
   @media(max-width:900px){
     height: 32rem;
+    width: auto;
   }
   @media(max-width:600px){
    width: 65rem;
@@ -256,14 +258,7 @@ flex-wrap: wrap;
   position: fixed;
 }
 
-.contact-img{
-    display: flex;
-    width: 13em;
-    border: 2px green solid;
-    background-color: white;
-    border-radius: 50%;
-   
-}
+
 
 .loginBox{
   width: 30rem;
@@ -372,4 +367,21 @@ transition: all 0.3s ease;
   100% {
     transform: scale(1, 1);
   }
+}
+
+.text{
+  font-family: 'Luckiest Guy', cursive;
+  letter-spacing: 2px;
+}
+
+.error{
+  position: fixed;
+  font-weight: 600;
+  top: 10%;
+  border-radius: 9px 0px 0px 9px;
+  right: 0;
+  color: white;
+  font-size: 0.8rem;
+  background-color: red;
+  padding: 1rem;
 }
