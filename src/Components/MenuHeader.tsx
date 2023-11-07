@@ -63,7 +63,7 @@ const MenuHeader = ({text}:any) => {
   return (
     <Wrapper>
          <div>
-        <img className='vid' src='https://res.cloudinary.com/dyqynjew8/image/upload/v1698655077/Screenshot_2023-10-30_140734_zxivqh.png' alt='vid'/>
+        <img className='vid' src='https://res.cloudinary.com/dyqynjew8/image/upload/v1698769987/Untitled_design_24_zqmrsm.png' alt='vid'/>
          <div className='videotext'>
           <h1>{text}</h1>
           <p className='tagline'></p>

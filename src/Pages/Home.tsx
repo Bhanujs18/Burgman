@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom"
-import HomeSection1 from "../Components/HomeSection1"
+// import HomeSection1 from "../Components/HomeSection1"
 import HomeSection2 from "../Components/HomeSection2"
 import Featured from "../Components/Featured"
 
@@ -15,6 +15,7 @@ const Home = () => {
 //     stock: number;
 //     name: string,
 //  }  
+
 
   
   return (
@@ -32,7 +33,7 @@ const Home = () => {
 
       <img style={{width:'100%'}} src="./logo/6.png" />
       <Featured />
-      <HomeSection1 />
+      {/* <HomeSection1 /> */}
       <HomeSection2 />
      
     </div>

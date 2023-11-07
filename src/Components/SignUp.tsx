@@ -7,10 +7,12 @@ import { NavLink, useNavigate } from "react-router-dom";
 
 const Wrapper = styled.section`
 display: flex;
-background-image: url('https://i.pinimg.com/736x/86/66/1c/86661cf49e8be271efb9cf939d9e932e.jpg');
-justify-content: center;
+background-image: url('https://res.cloudinary.com/dyqynjew8/image/upload/v1699076264/Screenshot_2023-11-04_110719_phu4xk.png');
 background-position: inherit;
 background-repeat: no-repeat;
+justify-content:Center;
+align-items:Center;
+padding: 2rem 0rem;
 background-size: cover;
   width: 100%;
 //   background-color: grey;
@@ -18,7 +20,8 @@ background-position: top;
 align-items: center;
 .div{
     display: block;
-  
+    background-color: rgb(255,255,255,0.3);
+    border-radius: 15px;
     padding-top: 1rem;
     margin-top: 1rem;
     .signup{
@@ -29,6 +32,8 @@ align-items: center;
 .credential{
     display: block;
     margin: 2rem;
+    border-radius: 5px;
+    border: none;
     text-align: Center;
     outline: none;
     height: 2rem;
@@ -99,11 +104,10 @@ const SignUp = () => {
     return (
     <Wrapper>
         <div>
-        <div className="div">
-            <div className="signup">
-                <p>Sign Up</p>
-            </div>
-       
+        <div className="div">   
+        <div className="loginBox">
+        <div>
+            <div style={{width:'100%' , display:'flex' , justifyContent:'center'}}>       <div style={{width:'max-content'}}>
        <img  className='logImage credential'  src="https://i.pinimg.com/originals/ab/d7/a4/abd7a42750a2268fbd1088994e623ade.gif" />
        <div>
        <input className="credential" name="name" type="text" placeholder="Name"  onChange={dataset} />
@@ -111,11 +115,15 @@ const SignUp = () => {
        <input className="credential" name="email" type="text" placeholder="Email" onChange={dataset} />
        <input className="credential" name="password" type="Password" placeholder="Password" onChange={dataset} />
        <p style={{color:'white' , textAlign:'center'}}>{error}</p>
-       <div className="credential">
-       <button className="button" style={{width:'100%'}} onClick={handleSignUP}>Sign Up</button>
        </div>
-       <div className="credential">
-       <NavLink to='/login'><button className="button" style={{width:'100%' , backgroundColor:'grey'}}>Login</button></NavLink>
+      
+       </div>
+ 
+       <div className="login_buttons">
+       <button className="button" style={{width:'12rem'}} onClick={handleSignUP}>Sign Up</button>
+       <NavLink to='/login'><button className="button" style={{width:'12rem'}}>Login</button></NavLink>
+       </div>
+       </div>
        </div>
        </div>
        </div>

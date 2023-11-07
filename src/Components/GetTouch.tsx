@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
@@ -56,7 +55,7 @@ const Button = styled.section`
   }
 `;
 
-const GetinTouch = () => {
+const GetTouch = () => {
   return (
     <Wrapper>
       <Container>
@@ -65,7 +64,7 @@ const GetinTouch = () => {
           <input className="inputs" type="text" placeholder="Email"></input>
         </Inputs>
         <Button>
-          <NavLink style={{ textDecoration: "none" }} className="button">
+          <NavLink to={''} style={{ textDecoration: "none" }} className="button">
             Get Updates
           </NavLink>
         </Button>
@@ -75,4 +74,4 @@ const GetinTouch = () => {
   );
 };
 
-export default GetinTouch;
+export default GetTouch;

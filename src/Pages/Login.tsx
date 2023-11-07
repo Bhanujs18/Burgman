@@ -6,11 +6,12 @@ import { auth } from "../firebaseAuth/firebase";
 
 const Wrapper = styled.section`
 display: flex;
-background-image: url('./logo/logingif.gif');
+background-image: url('https://res.cloudinary.com/dyqynjew8/image/upload/v1699076264/Screenshot_2023-11-04_110719_phu4xk.png');
 background-position: inherit;
 background-repeat: no-repeat;
 background-size: cover;
-
+width: 100%;
+padding: 2rem 0rem;
 justify-content: center;
 background-position: top;
 align-items: center;
@@ -18,16 +19,22 @@ align-items: center;
     display: block;
     padding-top: 1rem;
     margin-top: 1rem;
+    background-color: rgb(255,255,255,0.3);
+    border-radius: 15px;
     .signup{
         text-align: center;
         color: white;
+        
         font-size: 1.5rem;
     }
   
 .credential{
     display: block;
     margin: 2rem;
+    border-radius: 5px;
    text-align: Center;
+   border: none;
+   padding: 1rem;
     outline: none;
     height: 2rem;
     color: green;
@@ -81,13 +88,11 @@ const Login = () => {
         setError(" ");
         signInWithEmailAndPassword(auth , email , password).then((res) =>
         { 
-             console.log(res);
-           
-            navigate('/');
+            console.log(res);
+            navigate('/profile');
             localStorage.setItem("islogin?" , JSON.stringify(true));
             setError("Logged In SucessFully");
             
-
         }).catch((error)=>{
             setError(error.message);
             localStorage.setItem("islogin?" , JSON.stringify(false));
@@ -105,18 +110,18 @@ const Login = () => {
             {(error)?  <p style={{color:'green' , textAlign:'center' , backgroundColor:'white' , padding: "0.11rem" , zIndex:'2222'}}>{error}</p> : null}
             </div>
             <div style={{display:'flex' , alignItems:'center' , width: '100%' , justifyContent:'center'}}>
-                <div style={{width:'max-content' , gap:'1rem'}}>
+                <div style={{margin:'0' , padding:'0'}} className="loginBox">
+            <div style={{width:'max-content' , margin:'0' , padding:'0'}}>
             <img  className='logImage credential'  src="https://i.pinimg.com/originals/ab/d7/a4/abd7a42750a2268fbd1088994e623ade.gif" />
             <input className="credential" type="text" name="email" placeholder="Email" onChange={dataset} />
             <input className="credential" type="Password" name="password" placeholder="Password" onChange={dataset} />
+            </div>
                </div>
            </div>
            <div>
-       <div className="credential">
-       <button className="button" style={{width:'16rem'}} onClick={handleSignUP}>Login</button>
-       </div>
-       <div className="credential">
-       <NavLink to='/signup'><button className="button" style={{width:'16rem'}}>Sign Up / New User</button></NavLink>
+       <div className="login_buttons">
+       <button className="button" style={{width:'12rem'}} onClick={handleSignUP}>Login</button>
+       <NavLink to='/signup'><button className="button" style={{width:'12rem'}}>Sign Up</button></NavLink>
        </div>
        </div>
     

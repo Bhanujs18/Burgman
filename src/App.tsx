@@ -10,6 +10,7 @@ import OrderPlaced from "./Pages/OrderPlaced"
 import OrderNotPlaced from "./Pages/OrderNotPlaced"
 import Error from "./Components/Error"
 import Login from "./Pages/Login"
+// import Data from "./Pages/Data";
 import SignUp from "./Components/SignUp"
 import { useEffect , useState} from "react"
 import { auth } from "./firebaseAuth/firebase"
@@ -51,6 +52,7 @@ useEffect(()=>{
       <Route path="/orderPlaced" element={<OrderPlaced />}/>
       <Route path="/orderNotPlaced" element={<OrderNotPlaced />}/>
       <Route path="/signup" element={<SignUp />} />
+      {/* <Route path="/data" element={<Data />}  /> */}
       <Route path="/profile" element={<Profile />} />
       <Route path="/*" element={<Error />} />
       </Routes>

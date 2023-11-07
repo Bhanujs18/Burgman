@@ -35,14 +35,13 @@ body {
 }
 
 .gradient-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 32px;
+  display: flex;
+  justify-content:center;
+  flex-wrap: wrap;
+  gap:2rem;
+  width:100%;
   background:transparent;
   padding: 10px;
-  @media screen and (max-width: 991px) {
-    grid-template-columns: 1fr;
-  }
 }
 
 .container-title {
@@ -57,25 +56,30 @@ body {
 }
 
 .card {
-  max-width: 550px;
   border: 0;
   background:transparent;
-  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items:center;
   margin-inline: auto;
 }
 
 .container-card {
   position: relative;
   display: flex;
-  border: 2px solid transparent;
+  width: 20rem;
+  color: green;
+  border: 5px green solid;
   align-items:Center;
-  background-color: green;  background-clip: padding-box;
+  background-color: white;
+  background-clip: padding-box;
   border-radius: 45px;
   font-family: 'Luckiest Guy', cursive;
-  padding: 1rem;
+  padding: 0.5rem;
   .img {
-    width; 9rem;
-    height: 9rem;
+    width; 7rem;
+    height: 7rem;
   }
 }
 
@@ -118,7 +122,7 @@ body {
 
 .card-title {
   font-weight: 600;
-  color: white;
+  color: green;
   font-family: 'Luckiest Guy', cursive;
   letter-spacing: 1.2px;
   line-height: 40px;
@@ -130,7 +134,7 @@ body {
 .card-description {
   font-weight: 600;
   line-height: 32px;
-  color: hsla(0, 0%, 100%, 0.5);
+  color: green;
   font-size: 16px;
   max-width: 470px;
 }
@@ -198,7 +202,7 @@ const HomeSection1 = () => {
       <div className="container-card bg-blue-box">
       <img className='img' src='https://res.cloudinary.com/dyqynjew8/image/upload/v1698651578/french-fries-american-food-dish-ham-and-cheese-sandwich-slider-removebg-preview_gm843g.png' />
       <div style={{width:'100%', textAlign:'center'}}>
-        <p className="card-title">Burgman Special</p>
+        <p className="card-title">Burgman</p>
         <p className="card-description">Add To Cart</p>
         </div>
       </div>

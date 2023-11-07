@@ -64,8 +64,8 @@ transition: all 0.3s ease;
           justify-content: center;
           height: 1.3rem;
           tranform: translate(-50%,50%);
-          background-color: #FFDE59;
-          color: black;
+          background-color: green;
+          color: white;
           width: 1.5rem;
           border-radius: 50%;
         }
@@ -122,8 +122,8 @@ transition: all 0.3s ease;
         align-items: center;
         fonr-size: 1.4rem;
         .cartnumber{
-          background-color: #FFDE59;
-          color: black;
+          background-color: green;
+          color: white;
           font-family: 'Luckiest Guy', cursive;
           text-shadow: none;
           font-size: 0.8rem;

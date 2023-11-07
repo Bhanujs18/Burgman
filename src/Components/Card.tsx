@@ -9,20 +9,21 @@ const Wrapper=styled.section`
 
   .card{
     color: white;
-    border: 2px green solid;
-    background-color: green;
-    // box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    display: flex;
-    overflow: hidden;
-    height: 10rem;
-    border-radius: 12px;
+    background-color: rgb(255,255,255,0.2);
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;    overflow: hidden;
+    height: 9rem;
+    width: 24rem;
+    border-radius: 18px;
     .img_and_price{
     display: flex;
     gap: 0.2rem;
-     
+     img{
+      height:9rem;
+       width:8rem;
+     }
     .nameandicon{
        display: flex;
-        align-items: center;
+        
         gap: 1rem;
         font-size: 0.8rem;
         
@@ -43,7 +44,7 @@ const Wrapper=styled.section`
      align-items: center;
      gap: 0.5rem;
      color: white;
-    font-size: 1.1rem;
+     font-size: 1.1rem;
     }
     }
     
@@ -85,6 +86,81 @@ const Wrapper=styled.section`
       }
     }
   }
+  
+  }
+
+  
+  @media(max-width: 410px){
+    .card{
+      display:block;
+      width:20rem;
+      height:15rem;
+      padding:0;
+
+      .img_and_price{
+        display:flex;
+        align-items:Center;
+        padding:0;
+        img{
+          height:7rem;
+           width:7rem;
+         }
+      .nameandicon{
+        display:block;
+        font-size: 0.7rem;
+        
+      }
+      .addtocart{
+        font-size: 0.7rem;
+        padding:0;
+
+      }
+      .addtocarticon{
+        display: flex;
+       align-items: center;
+       gap: 0.4rem;
+       padding:0;
+
+      font-size: 0.9rem;
+      }
+    }
+  }
+  }
+
+    
+  @media(max-width: 350px){
+    .card{
+      display:block;
+      width:20rem;
+      height:15rem;
+      padding:0;
+
+      .img_and_price{
+        display:flex;
+        align-items:Center;
+        padding:0;
+        img{
+          height:7rem;
+           width:7rem;
+         }
+      .nameandicon{
+        display:block;
+        font-size: 0.7rem;
+        
+      }
+      .addtocart{
+        font-size: 0.7rem;
+        padding:0;
+
+      }
+      .addtocarticon{
+        display: flex;
+       align-items: center;
+       gap: 0.4rem;
+       padding:0;
+      font-size: 0.7rem;
+      }
+    }
   }
   }
 
@@ -125,7 +201,7 @@ const [quantity, setQuantity] = useState(1);
          
 
         <div className="img_and_price">
-                <img src={img} alt={name}  style={{height: '10rem' , width:'9rem'}}/>
+                <img src={img} alt={name}  />
                           <div>
                                  <div className="nameandicon">
                                     <img src={category} style={{height: "1rem" , width: "1rem"}}/>

@@ -1,7 +1,11 @@
+import { getAuth } from "firebase/auth";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export const CheckOut = ({pay}:any) => {
+  const auth = getAuth();
+  const user = auth.currentUser;
+  const email = (user as any).email;
   console.log("total amt " + pay);
    const navigate = useNavigate();
   const loadScript = (src:any) => {
@@ -59,13 +63,14 @@ export const CheckOut = ({pay}:any) => {
      const submit = async () => {
         console.log("i m submit");
         console.log("id" + products)
-        const res = await fetch('https://burgman-burgers-default-rtdb.firebaseio.com/userData.json',{
+        const res = await fetch('https://burgman-52a82-default-rtdb.firebaseio.com/orders.json',{
         method : "POST", 
         headers:{
           "Content-Type" : "application/json",
         },
         body:JSON.stringify({
            products,
+           email,
         }),
     })
     if(res){

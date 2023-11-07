@@ -2,7 +2,8 @@ import { NavLink } from "react-router-dom";
 import { styled } from "styled-components";
 import { BsInstagram, BsFacebook, BsTwitter } from "react-icons/bs";
 import { AiFillYoutube } from "react-icons/ai";
-import GetinTouch from "./GetinTouch";
+import GetTouch from "./GetTouch";
+
 
 const Wrapper = styled.section`
 background: #010203;
@@ -155,7 +156,7 @@ const Footer = () => {
         {/* --------------------------GetinTouch  text starts------------------------------ */}
         <Container>
           <div className="touch">
-            <GetinTouch />
+            <GetTouch />
           </div>
         </Container>
         {/* -------------------------- GetinTouch text starts------------------------------ */}

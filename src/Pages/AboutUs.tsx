@@ -1,6 +1,8 @@
 
 import { styled } from "styled-components";
 import MenuHeader from "../Components/MenuHeader";
+import { useRef } from "react";
+import useLazyLoad from "../useLazyLoad";
 
 const Wrapper = styled.section`
 text-align: justify;
@@ -55,14 +57,12 @@ text-align: justify;
 
 const AboutUs = () =>{
 
-
-
-
+const triggerref = useRef(null)
+const useLazyLoad = ({ triggerRef, onGrabData, options })
     return(
         <Wrapper>
           
           <MenuHeader text={'About us'} />
-          <img style={{width:'100%'}} loading="lazy" src="https://res.cloudinary.com/dyqynjew8/image/upload/v1698661366/Burgers_Makes_you_Burgman_kvfa2b.png"  />
             <div className="whoweare">
             <div className="paradiv">
             <h1 className="parahead">Who We Are</h1>
@@ -74,12 +74,13 @@ const AboutUs = () =>{
             </p>
             </div>
             </div>
-            <hr />
             
+        
             <div>
-              <img src="./logo/2.jpg" alt="aboutus" style={{width:"100%"}} />
-            </div>
-
+             
+                 <img ref={triggerref} style={{width:'100%'}} loading="lazy" src="https://res.cloudinary.com/dyqynjew8/image/upload/v1698661366/Burgers_Makes_you_Burgman_kvfa2b.png"  /> 
+              
+              </div>
             <div className="whoweare">
             <div className="paradiv">
             <h1 className="parahead">What We Are</h1>

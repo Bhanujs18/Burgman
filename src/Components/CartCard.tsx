@@ -107,9 +107,9 @@ const Card = ({product , qty}:any) => {
    const [quantity, setQuantity] = useState(qty);
 
    const data = (product:any , quantity:number) => {
-    quantity < 0 ? 0 : setQuantity(quantity);
-    const arr = { product , quantity};
-    dispatch(addtocart(arr));
+     quantity < 0 ? 0 : setQuantity(quantity);
+     const arr = { product , quantity};
+     dispatch(addtocart(arr));
   }
  
 
