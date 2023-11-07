@@ -9,9 +9,7 @@ text-align: justify;
 .contactTitle{
     display: flex;
     align-items: center;
-
     justify-content: center;
-
   }
   .whoweare{
     display: flex;
